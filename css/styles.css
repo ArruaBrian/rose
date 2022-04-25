@@ -409,7 +409,148 @@ template {
   }
 }
 
-.boton, .boton__normal, .boton__navbar {
+@-webkit-keyframes rainborder {
+  0% {
+    border: white solid 1px;
+  }
+  10% {
+    border: rgb(199, 59, 59) solid 1px;
+  }
+  20% {
+    border: yellow solid 1px;
+  }
+  30% {
+    border: green solid 1px;
+  }
+  40% {
+    border: blue solid 1px;
+  }
+  50% {
+    border: orange solid 1px;
+  }
+  60% {
+    border: tomato solid 1px;
+  }
+  70% {
+    border: cyan solid 1px;
+  }
+  80% {
+    border: purple solid 1px;
+  }
+  90% {
+    border: yellowgreen solid 1px;
+  }
+  100% {
+    border: rgb(189, 65, 48) solid 1px;
+  }
+}
+
+@keyframes rainborder {
+  0% {
+    border: white solid 1px;
+  }
+  10% {
+    border: rgb(199, 59, 59) solid 1px;
+  }
+  20% {
+    border: yellow solid 1px;
+  }
+  30% {
+    border: green solid 1px;
+  }
+  40% {
+    border: blue solid 1px;
+  }
+  50% {
+    border: orange solid 1px;
+  }
+  60% {
+    border: tomato solid 1px;
+  }
+  70% {
+    border: cyan solid 1px;
+  }
+  80% {
+    border: purple solid 1px;
+  }
+  90% {
+    border: yellowgreen solid 1px;
+  }
+  100% {
+    border: rgb(189, 65, 48) solid 1px;
+  }
+}
+@-webkit-keyframes rainbk {
+  0% {
+    background-color: white;
+  }
+  10% {
+    background-color: rgb(199, 59, 59);
+  }
+  20% {
+    background-color: yellow;
+  }
+  30% {
+    background-color: green;
+  }
+  40% {
+    background-color: blue;
+  }
+  50% {
+    background-color: orange;
+  }
+  60% {
+    background-color: tomato;
+  }
+  70% {
+    background-color: cyan;
+  }
+  80% {
+    background-color: purple;
+  }
+  90% {
+    background-color: yellowgreen;
+  }
+  100% {
+    background-color: rgb(189, 65, 48);
+  }
+}
+@keyframes rainbk {
+  0% {
+    background-color: white;
+  }
+  10% {
+    background-color: rgb(199, 59, 59);
+  }
+  20% {
+    background-color: yellow;
+  }
+  30% {
+    background-color: green;
+  }
+  40% {
+    background-color: blue;
+  }
+  50% {
+    background-color: orange;
+  }
+  60% {
+    background-color: tomato;
+  }
+  70% {
+    background-color: cyan;
+  }
+  80% {
+    background-color: purple;
+  }
+  90% {
+    background-color: yellowgreen;
+  }
+  100% {
+    background-color: rgb(189, 65, 48);
+  }
+}
+.boton, .boton__normal, .boton__normal__rainbow, .boton__navbar, .boton__navbar__rainbow {
   color: #978bda;
   border: #978bda solid 1px;
   border-radius: 60px;
@@ -421,26 +562,62 @@ template {
   justify-content: center;
   align-items: center;
 }
-.boton:hover, .boton__normal:hover, .boton__navbar:hover {
-  background-color: white;
-  color: #7d5597;
-  transform: scale(1.25);
-  transition: all 0.2s;
+@media (hover: hover) {
+  .boton:hover, .boton__normal:hover, .boton__normal__rainbow:hover, .boton__navbar:hover, .boton__navbar__rainbow:hover {
+    background-color: white;
+    color: #7d5597;
+    transform: scale(1.25);
+    transition: all 0.2s;
+  }
 }
-.boton__navbar {
+@media (hover: none) {
+  .boton:active, .boton__normal:active, .boton__normal__rainbow:active, .boton__navbar:active, .boton__navbar__rainbow:active {
+    background-color: white;
+    color: #7d5597;
+    transform: scale(1.25);
+    transition: all 0.2s;
+  }
+}
+.boton__navbar, .boton__navbar__rainbow {
   width: 40px;
   height: auto;
   aspect-ratio: 1/1;
 }
-.boton__normal {
+.boton__navbar__rainbow {
+  -webkit-animation: 4s rainborder linear infinite;
+          animation: 4s rainborder linear infinite;
+}
+@media (hover: hover) {
+  .boton__navbar__rainbow:hover {
+    -webkit-animation: 4s rainbk linear infinite;
+            animation: 4s rainbk linear infinite;
+    border: #978bda solid 1px;
+    color: white;
+    transform: scale(1.25);
+    transition: all 0.2s;
+  }
+}
+@media (hover: none) {
+  .boton__navbar__rainbow:active {
+    background-color: white;
+    color: #7d5597;
+    transform: scale(1.25);
+    transition: all 0.2s;
+  }
+}
+.boton__normal, .boton__normal__rainbow {
   width: auto;
   height: auto;
   aspect-ratio: 16/5;
   padding: 10px;
 }
+.boton__normal__rainbow {
+  -webkit-animation: 4s rainborder linear infinite;
+          animation: 4s rainborder linear infinite;
+}
 
 body {
-  background-color: #0e1620;
+  background: linear-gradient(180deg, rgb(14, 22, 32) 0%, rgb(22, 14, 32) 100%);
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -552,8 +729,4 @@ body {
   height: 80px;
   width: 80px;
   aspect-ratio: 1/1;
-}
-
-* {
-  border: red solid 1px;
 }/*# sourceMappingURL=styles.css.map */

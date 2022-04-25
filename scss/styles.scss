@@ -96,25 +96,6 @@ $margins:(
 }
 
 
-// ========================================Mobile or Desktop===========================================
-
-// Mobile
-
-$dispositivo: ();
-
-@media (hover: none) {
-
-    $dispositivo: 0 !global;
-    
-}
-
-// Desktop
-
-@media (hover: hover) {
-
-    $dispositivo: 1 !global;
-    
-}
 
 // ========================================Medias===========================================
 
@@ -160,6 +141,43 @@ $breakps:(
     }
     
 }
+
+// ========================================Animaciones===========================================
+
+// Borde rainbow
+
+@keyframes rainborder{
+
+    0% {border: white solid 1px;}
+    10% {border: rgb(199, 59, 59) solid 1px;}
+    20% {border: yellow solid 1px;}
+    30% {border: green solid 1px;}
+    40% {border: blue solid 1px;}
+    50% {border: orange solid 1px;}
+    60% {border: tomato solid 1px;}
+    70% {border: cyan solid 1px;}
+    80% {border: purple solid 1px;}
+    90% {border: yellowgreen solid 1px;}
+    100% {border: rgb(189, 65, 48) solid 1px;}
+}
+
+// Background
+
+@keyframes rainbk{
+
+    0% { background-color: white ;}
+    10% { background-color: rgb(199, 59, 59) ;}
+    20% { background-color: yellow ;}
+    30% { background-color: green ;}
+    40% { background-color: blue ;}
+    50% { background-color: orange ;}
+    60% { background-color: tomato ;}
+    70% { background-color: cyan ;}
+    80% { background-color: purple ;}
+    90% { background-color: yellowgreen ;}
+    100% { background-color: rgb(189, 65, 48) ;}
+}
+
 // ========================================Botones===========================================
 
 .boton{
@@ -171,7 +189,7 @@ $breakps:(
     text-decoration: none;
     @include flexbox(row, center, center, 1);
 
-    @if $dispositivo == 1 {
+    @media (hover: hover) {
 
         &:hover{
 
@@ -183,7 +201,7 @@ $breakps:(
         }
         
     }
-    @else{
+    @media (hover: none){
 
         &:active{
 
@@ -203,6 +221,39 @@ $breakps:(
         aspect-ratio: 1/1;
         @extend.boton;
 
+        &__rainbow{
+
+            @extend.boton__navbar;
+            animation: 4s rainborder linear infinite;
+
+            @media (hover: hover) {
+
+                &:hover{
+        
+                    animation: 4s rainbk linear infinite;
+                    border: $violeta solid 1px;
+                    color: white;
+                    transform: scale(1.25);
+                    transition: all 0.2s;
+            
+                }
+                
+            }
+            @media (hover: none){
+        
+                &:active{
+        
+                    background-color: white;
+                    color: $violeta__o;
+                    transform: scale(1.25);
+                    transition: all 0.2s;
+            
+                }
+        
+            }
+
+        }
+
     }
 
     &__normal{
@@ -212,6 +263,13 @@ $breakps:(
         aspect-ratio: 16/5;
         padding: 10px;
         @extend.boton;
+
+        &__rainbow{
+
+            animation: 4s rainborder linear infinite;
+            @extend.boton__normal;
+
+        }
 
     }
 
@@ -225,7 +283,7 @@ $breakps:(
 
 body{
 
-    background-color: $azul__o;
+    background: linear-gradient(180deg, rgba(14,22,32,1) 0%, rgba(22,14,32,1) 100%);
 
     // Flexbox
 
@@ -382,11 +440,11 @@ body{
 
 // ========================================Debug===========================================
 
-*{
+// *{
 
-    border: red solid 1px;
+//     border: red solid 1px;
 
-}
+// }
 
 
 
