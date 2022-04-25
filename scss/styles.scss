@@ -1,0 +1,397 @@
+// ========================================Reset===========================================
+
+@use 'reset';
+
+// ========================================Modulos===========================================
+
+@use 'colors' as *;
+
+// RFS de boostrap para el texto responsivo (es lo unico que logro rescatar de boostrap)
+
+@use 'rfs' as *;
+
+// ========================================Clases de los colores===========================================
+
+$color:(
+    violeta: $violeta,
+    violeta__o: $violeta__o,
+    gris: $gris,
+    negro: $negro,
+    azul__o: $azul__o,
+    amarillo: $amarillo
+);
+
+// Clases
+
+@each $colors, $color in $color {
+
+    .#{$colors}{
+
+        color: $color;
+
+    }
+    
+}
+
+// ========================================Margins===========================================
+
+$margins:(
+
+    0: 0px,
+    1: 10px,
+    2: 20px,
+    3: 30px,
+    4: 40px
+);
+
+@each $m, $margins in $margins {
+        
+    .m-#{$m}{
+
+        margin: $margins;
+
+    }
+
+}
+
+// ========================================Textos===========================================
+
+
+// Fuente: Impact
+
+@font-face {
+    font-family: oswald;
+    src: url(../fonts/Oswald.ttf) format('truetype');
+}
+
+// Textos responsivos
+
+.text{
+
+    font-family: oswald;
+
+    &__xs{
+
+        @include font-size(20px);
+        @extend.text;
+
+    }
+
+    &__s{
+
+        @include font-size(40px);
+        @extend.text;
+
+    }
+
+    &__l{
+
+        @include font-size(60px);
+        @extend.text;
+
+    }
+
+
+
+}
+
+
+// ========================================Mobile or Desktop===========================================
+
+// Mobile
+
+$dispositivo: ();
+
+@media (hover: none) {
+
+    $dispositivo: 0 !global;
+    
+}
+
+// Desktop
+
+@media (hover: hover) {
+
+    $dispositivo: 1 !global;
+    
+}
+
+// ========================================Medias===========================================
+
+// Puntos de quiebre
+
+$breakps:(
+
+    sm: 540px,
+    md: 768px,
+    lg: 1024px
+
+);
+
+// Media
+
+@mixin media-up ($breakp) {
+
+    @media screen and (max-width: map-get($breakps, $breakp)) {
+        @content;
+    }
+    
+}
+
+// ========================================Flexbox===========================================
+
+@mixin flexbox ($fdirection, $fcontent, $fitems, $i : 0) {
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: $fdirection;
+    justify-content: $fcontent;
+    align-items: $fitems;
+    $important: $i;
+
+    @if $important == 0 {
+
+        @include media-up(sm){
+
+            flex-direction: column;
+
+        }
+        
+    }
+    
+}
+// ========================================Botones===========================================
+
+.boton{
+
+    color: $violeta;
+    border: $violeta solid 1px;
+    border-radius: 60px;
+    transition: all 0.2s;
+    text-decoration: none;
+    @include flexbox(row, center, center, 1);
+
+    @if $dispositivo == 1 {
+
+        &:hover{
+
+            background-color: white;
+            color: $violeta__o;
+            transform: scale(1.25);
+            transition: all 0.2s;
+    
+        }
+        
+    }
+    @else{
+
+        &:active{
+
+            background-color: white;
+            color: $violeta__o;
+            transform: scale(1.25);
+            transition: all 0.2s;
+    
+        }
+
+    }
+
+    &__navbar{
+
+        width: 40px;
+        height: auto;
+        aspect-ratio: 1/1;
+        @extend.boton;
+
+    }
+
+    &__normal{
+
+        width: auto;
+        height: auto;
+        aspect-ratio: 16/5;
+        padding: 10px;
+        @extend.boton;
+
+    }
+
+    
+}
+
+
+
+
+// ========================================Body===========================================
+
+body{
+
+    background-color: $azul__o;
+
+    // Flexbox
+
+    @include flexbox(column, center, center, 1);
+
+}
+
+
+
+// ========================================Header===========================================
+
+// Base
+
+.global__header{
+
+    @include flexbox(row, space-between, center, 1);
+
+    height: 120px;
+    width: 80%;
+
+    @include media-up(md){
+
+        width: 100%;
+
+    }
+
+}
+
+// Logo
+
+.header__logo{
+
+    order: 1;
+
+    height: 80px;
+    width: auto;
+    aspect-ratio: 1/1;
+
+}
+
+// navbar
+
+.header__navbar{
+
+    @include flexbox(row, space-between, center, 1);
+
+    width: 200px;
+    list-style: none;
+    margin-right: 20px;
+
+}
+
+// ========================================Main===========================================
+
+// Base
+
+.index__main{
+
+    @include flexbox(column, flex-start, center, 1);
+    height: 1000px;
+    width: 80%;
+
+    @include media-up(md){
+
+        width: 100%;
+
+    }
+
+}
+
+// Rick
+
+.index__rick{
+
+    width: 28%*3;
+    height: auto;
+    aspect-ratio: 16/8;
+    position: relative;
+    z-index: 2;
+
+    @include media-up(md){
+
+        width: 100%;
+
+    }
+
+}
+
+// blob
+
+.index__blob{
+
+    width: 16%*5;
+    height: auto;
+    aspect-ratio: 16/14;
+    background-image: url(../images/blobs/primero.png);
+    background-repeat: no-repeat;
+    background-size: 98%, auto;
+    background-position: center;
+
+    @include flexbox(column, center, center, 1);
+
+    @include media-up(md){
+
+        width: 100%;
+
+    }
+}
+
+// Navegador de redes
+
+
+
+
+// ========================================footer===========================================
+
+// Base
+
+.global__footer{
+
+    @include flexbox(row, space-between, center, 1);
+    height: 180px;
+    width: 80%;
+
+    @include media-up(md){
+
+        width: 100%;
+
+    }
+
+}
+
+// Logo section
+
+.footer__logo{
+
+    margin-right: 20px;
+
+}
+
+.footer__logo__img{
+
+    height: 80px;
+    width: 80px;
+    aspect-ratio: 1/1;
+
+}
+
+// ig
+
+
+
+
+
+// ========================================Debug===========================================
+
+*{
+
+    border: red solid 1px;
+
+}
+
+
+
+
+
+
+
+
