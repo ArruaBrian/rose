@@ -793,7 +793,6 @@ body {
 .index__skills {
   width: 80%;
   height: auto;
-  aspect-ratio: 16/10;
   display: grid;
   height: auto;
   min-height: 100%;
