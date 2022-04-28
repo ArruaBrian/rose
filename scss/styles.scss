@@ -4,7 +4,7 @@
 
 // ========================================Modulos===========================================
 
-@use 'colors' as *;
+@use 'colors'as *;
 
 // La operacion logica "/" fue eliminada en sass 2.0.0 por ende usamos Math
 
@@ -12,45 +12,42 @@
 
 // RFS de boostrap para el texto responsivo (es lo unico que logro rescatar de boostrap)
 
-@use 'rfs' as *;
+@use 'rfs'as *;
 
 // ========================================Clases de los colores===========================================
 
-$color:(
-    violeta: $violeta,
+$color:(violeta: $violeta,
     violeta__o: $violeta__o,
     gris: $gris,
     negro: $negro,
     azul__o: $azul__o,
-    amarillo: $amarillo
-);
+    amarillo: $amarillo);
 
 // Clases
 
-@each $colors, $color in $color {
+@each $colors,
+$color in $color {
 
-    .#{$colors}{
+    .#{$colors} {
 
         color: $color;
 
     }
-    
+
 }
 
 // ========================================Margins===========================================
 
-$margins:(
+$margins:(0: 0rem,
+    1: 0.625rem,
+    2: 1.25rem,
+    3: 1.875rem,
+    4: 2.5rem);
 
-    0: 0px,
-    1: 10px,
-    2: 20px,
-    3: 30px,
-    4: 40px
-);
+@each $m,
+$margins in $margins {
 
-@each $m, $margins in $margins {
-        
-    .m-#{$m}{
+    .m-#{$m} {
 
         margin: $margins;
 
@@ -70,34 +67,34 @@ $margins:(
 
 // Textos responsivos
 
-.text{
+.text {
 
     font-family: oswald;
 
-    &__xxs{
+    &__xxs {
 
-        @include font-size(15px);
+        @include font-size(0.9375rem);
         @extend.text;
 
     }
 
-    &__xs{
+    &__xs {
 
-        @include font-size(20px);
+        @include font-size(1.25rem);
         @extend.text;
 
     }
 
-    &__s{
+    &__s {
 
-        @include font-size(40px);
+        @include font-size(2.5rem);
         @extend.text;
 
     }
 
-    &__l{
+    &__l {
 
-        @include font-size(60px);
+        @include font-size(3.75rem);
         @extend.text;
 
     }
@@ -112,13 +109,9 @@ $margins:(
 
 // Puntos de quiebre
 
-$breakps:(
-
-    sm: 768px,
+$breakps:(sm: 768px,
     md: 992px,
-    lg: 1200px
-
-);
+    lg: 1200px);
 
 // Media
 
@@ -127,13 +120,13 @@ $breakps:(
     @media screen and (max-width: map-get($breakps, $breakp)) {
         @content;
     }
-    
+
 
 }
 
 // ========================================Box===========================================
 
-@mixin box ($width, $height, $color, $br, $ar : none  ){
+@mixin box ($width, $height, $color, $br, $ar : none) {
 
     width: $width;
     height: $height;
@@ -154,47 +147,55 @@ $breakps:(
     align-items: $fitems;
     $important: $i;
 
-    @if $important == 0 {
+    @if $important==0 {
 
-        @include media-up(sm){
+        @include media-up(sm) {
 
             flex-direction: column;
 
         }
-        
+
     }
-    
+
 }
 
 // ========================================Grid===========================================
 
-@mixin grid ($normal, $columns, $rows, $colg, $rowg, $ji : center, $ai : center){
+@mixin grid ($normal, $columns, $rows, $colg, $rowg, $ji : center, $ai : center) {
 
     display: grid;
+    height: auto;
+    min-height: 100%;
 
-    @if $normal == 1 {
+
+    @if $normal==1 {
 
         grid-template-columns: repeat($columns, 1fr);
         grid-template-rows: repeat($rows, 1fr);
-        column-gap: $colg;
-        row-gap: $rowg;
-        justify-items: $ji;
-        align-items: $ai;
 
-        @include media-up (md){
+        // Responsive automatico solo si el grid es automatico
+
+        @include media-up (md) {
 
             grid-template-columns: math.div($columns, $columns)+fr;
             grid-template-rows: ($columns * $rows)+fr;
 
         }
-        
+
     }
-    @else{
+
+    @else {
+
+        // Contenido especial
 
         @content;
 
     }
 
+    column-gap: $colg;
+    row-gap: $rowg;
+    justify-items: $ji;
+    align-items: $ai;
 
 }
 
@@ -203,41 +204,106 @@ $breakps:(
 
 // Borde rainbow
 
-@keyframes rainborder{
+@keyframes rainborder {
 
-    0% {border: white solid 1px;}
-    10% {border: rgb(199, 59, 59) solid 1px;}
-    20% {border: yellow solid 1px;}
-    30% {border: green solid 1px;}
-    40% {border: blue solid 1px;}
-    50% {border: orange solid 1px;}
-    60% {border: tomato solid 1px;}
-    70% {border: cyan solid 1px;}
-    80% {border: purple solid 1px;}
-    90% {border: yellowgreen solid 1px;}
-    100% {border: rgb(189, 65, 48) solid 1px;}
+    0% {
+        border: white solid 1px;
+    }
+
+    10% {
+        border: rgb(199, 59, 59) solid 1px;
+    }
+
+    20% {
+        border: yellow solid 1px;
+    }
+
+    30% {
+        border: green solid 1px;
+    }
+
+    40% {
+        border: blue solid 1px;
+    }
+
+    50% {
+        border: orange solid 1px;
+    }
+
+    60% {
+        border: tomato solid 1px;
+    }
+
+    70% {
+        border: cyan solid 1px;
+    }
+
+    80% {
+        border: purple solid 1px;
+    }
+
+    90% {
+        border: yellowgreen solid 1px;
+    }
+
+    100% {
+        border: rgb(189, 65, 48) solid 1px;
+    }
 }
 
 // Background
 
-@keyframes rainbk{
+@keyframes rainbk {
 
-    0% { background-color: white ;}
-    10% { background-color: rgb(199, 59, 59) ;}
-    20% { background-color: yellow ;}
-    30% { background-color: green ;}
-    40% { background-color: blue ;}
-    50% { background-color: orange ;}
-    60% { background-color: tomato ;}
-    70% { background-color: cyan ;}
-    80% { background-color: purple ;}
-    90% { background-color: yellowgreen ;}
-    100% { background-color: rgb(189, 65, 48) ;}
+    0% {
+        background-color: white;
+    }
+
+    10% {
+        background-color: rgb(199, 59, 59);
+    }
+
+    20% {
+        background-color: yellow;
+    }
+
+    30% {
+        background-color: green;
+    }
+
+    40% {
+        background-color: blue;
+    }
+
+    50% {
+        background-color: orange;
+    }
+
+    60% {
+        background-color: tomato;
+    }
+
+    70% {
+        background-color: cyan;
+    }
+
+    80% {
+        background-color: purple;
+    }
+
+    90% {
+        background-color: yellowgreen;
+    }
+
+    100% {
+        background-color: rgb(189, 65, 48);
+    }
 }
 
 // ========================================Botones===========================================
 
-.boton{
+.boton {
+
 
     color: $violeta;
     border: $violeta solid 1px;
@@ -245,75 +311,79 @@ $breakps:(
     transition: all 0.2s;
     text-decoration: none;
     @include flexbox(row, center, center, 1);
+    cursor: pointer;
 
     @media (hover: hover) {
 
-        &:hover{
+        &:hover {
 
             background-color: white;
             color: $violeta__o;
             transform: scale(1.25);
             transition: all 0.2s;
-    
-        }
-        
-    }
-    @media (hover: none){
 
-        &:active{
+        }
+
+    }
+
+    @media (hover: none) {
+
+        &:active {
 
             background-color: white;
             color: $violeta__o;
             transform: scale(1.25);
             transition: all 0.2s;
-    
+
         }
 
     }
 
-    &__navbar{
+    &__navbar {
 
         width: 40px;
         height: auto;
         aspect-ratio: 1/1;
         @extend.boton;
 
-        &__rainbow{
+        &__rainbow {
 
             @extend.boton__navbar;
             animation: 4s rainborder linear infinite;
 
             @media (hover: hover) {
 
-                &:hover{
-        
+                &:hover {
+
                     animation: 4s rainbk linear infinite;
                     border: $violeta solid 1px;
                     color: white;
                     transform: scale(1.25);
                     transition: all 0.2s;
-            
+
                 }
-                
+
             }
-            @media (hover: none){
-        
-                &:active{
-        
+
+            @media (hover: none) {
+
+                &:active {
+
                     background-color: white;
                     color: $violeta__o;
                     transform: scale(1.25);
                     transition: all 0.2s;
-            
+
                 }
-        
+
             }
+
 
         }
 
     }
 
-    &__normal{
+    &__normal {
 
         width: auto;
         height: auto;
@@ -321,7 +391,7 @@ $breakps:(
         padding: 10px;
         @extend.boton;
 
-        &__rainbow{
+        &__rainbow {
 
             animation: 4s rainborder linear infinite;
             @extend.boton__normal;
@@ -330,7 +400,44 @@ $breakps:(
 
     }
 
-    
+    &__fill {
+
+        @extend.boton;
+
+        background-color: $violeta;
+        border: $gris solid 1px;
+        color: $gris;
+
+        @media (hover: hover) {
+
+            &:hover {
+
+                border: $violeta solid 1px;
+                color: $violeta__o;
+                background-color: white;
+                transform: scale(1.25);
+                transition: all 0.2s;
+
+            }
+
+        }
+
+        @media (hover: none) {
+
+            &:active {
+
+                border: $violeta solid 1px;
+                color: $violeta__o;
+                background-color: white;
+                transform: scale(1.25);
+                transition: all 0.2s;
+
+            }
+
+        }
+
+    }
+
 }
 
 
@@ -338,9 +445,9 @@ $breakps:(
 
 // ========================================Body===========================================
 
-body{
+body {
 
-    background: linear-gradient(180deg, rgba(14,22,32,1) 0%, rgba(22,14,32,1) 100%);
+    background: linear-gradient(180deg, rgba(14, 22, 32, 1) 0%, rgba(22, 14, 32, 1) 100%);
 
     // Flexbox
 
@@ -354,14 +461,15 @@ body{
 
 // Base
 
-.global__header{
+.global__header {
 
     @include flexbox(row, space-between, center, 1);
 
     height: 120px;
     width: 80%;
+    max-width: 1280px;
 
-    @include media-up(md){
+    @include media-up(md) {
 
         width: 100%;
 
@@ -371,19 +479,21 @@ body{
 
 // Logo
 
-.header__logo{
+.header__logo {
 
     order: 1;
 
     height: 80px;
     width: auto;
     aspect-ratio: 1/1;
+    background-image: url('../logo.png');
+    background-size: contain;
 
 }
 
 // navbar
 
-.header__navbar{
+.header__navbar {
 
     @include flexbox(row, space-between, center, 1);
 
@@ -397,13 +507,14 @@ body{
 
 // Base
 
-.index__main{
+.index__main {
 
     @include flexbox(column, flex-start, center, 1);
     height: auto;
     width: 80%;
+    max-width: 1280px;
 
-    @include media-up(md){
+    @include media-up(md) {
 
         width: 100%;
 
@@ -413,7 +524,7 @@ body{
 
 // Rick
 
-.index__rick{
+.index__rick {
 
     width: 28%*3;
     height: auto;
@@ -422,7 +533,7 @@ body{
     z-index: 2;
     border-radius: 5px;
 
-    @include media-up(md){
+    @include media-up(md) {
 
         width: 100%;
 
@@ -432,7 +543,7 @@ body{
 
 // blob
 
-.index__blob{
+.index__blob {
 
     width: 16%*5;
     height: auto;
@@ -444,7 +555,7 @@ body{
 
     @include flexbox(column, center, center, 1);
 
-    @include media-up(md){
+    @include media-up(md) {
 
         width: 100%;
 
@@ -453,14 +564,14 @@ body{
 
 // Navegador de redes
 
-.global__social{
+.global__social {
 
     height: 50px;
     width: 100%;
     position: sticky;
     top: 20%;
-    
-    @include media-up(md){
+
+    @include media-up(md) {
 
         @include flexbox(row, center, center, 1);
         margin: 10px;
@@ -474,7 +585,7 @@ body{
 
 // Barra
 
-.social__bar{
+.social__bar {
 
     position: relative;
     background-color: #978bda3b;
@@ -484,7 +595,7 @@ body{
     transform: rotate(-90deg);
     border-radius: 10px;
 
-    @include media-up(md){
+    @include media-up(md) {
 
         position: inherit;
         transform: rotate(0deg);
@@ -492,13 +603,13 @@ body{
     }
 
     @include flexbox(row, center, center, 1);
-    
+
 }
 
 // Lista
 
-.bar__lista{
-    
+.bar__lista {
+
     width: 100%;
     padding: 0;
     list-style: none;
@@ -509,42 +620,43 @@ body{
 // Skills
 
 
-.index__skills{
+.index__skills {
 
     width: 80%;
     height: auto;
-    aspect-ratio: 16/10;
 
     @include grid(1, 2, 2, 20px, 10px);
 
-    @include media-up (md){
+    @include media-up (md) {
 
-        width:100%;
+        width: 100%;
 
     }
 
 }
 
-.skills__section{
+// boxes
+
+.skills__section {
 
     @include box(80%, auto, white, 20px, 1.6);
     max-width: 330px;
 
     border: $gris solid 1px;
-    background-color: rgb(4, 4, 8);
-    
+    background-color: $negro;
+
     @include flexbox(column, flex-start, flex-start, 1);
-    
+
 }
 
-.section__title{
+.section__title {
 
     @include flexbox(row, center, center, 1);
     width: 100%;
 
 }
 
-.section__content{
+.section__content {
 
     @include flexbox(row, space-evenly, center, 1);
     width: 100%;
@@ -558,15 +670,16 @@ body{
 
 // Base
 
-.global__footer{
+.global__footer {
 
     @include flexbox(row, space-between, center, 1);
     height: 180px;
     width: 80%;
+    max-width: 1280px;
     border-radius: 2rem;
     border-top: $violeta solid 1px;
 
-    @include media-up(md){
+    @include media-up(md) {
 
         width: 100%;
 
@@ -576,19 +689,19 @@ body{
 
 // Footer section (segunda capa de alineacion con flex)
 
-.footer__section{
+.footer__section {
 
     @include flexbox(row, flex-start, center, 1);
     width: 33%;
 
-    &--center{
+    &--center {
 
         @include flexbox(row, center, center, 1);
         width: 33%;
 
     }
 
-    &--end{
+    &--end {
 
         @include flexbox(row, flex-end, center, 1);
         width: 33%;
@@ -597,22 +710,24 @@ body{
 
 }
 
-.footer__logo__img{
+.footer__logo__img {
 
     height: 80px;
     width: 80px;
     aspect-ratio: 1/1;
+    background-image: url('../logo.png');
+    background-size: contain;
 
 }
 
 // Footer boton
 
-.footer__boton{
+.footer__boton {
 
     justify-content: flex-start;
     @extend.text__xs;
 
-    @include media-up(sm){
+    @include media-up(sm) {
 
         // Usamos el include porque no podemos extender en un media
 
@@ -622,24 +737,237 @@ body{
 
 }
 
+// ! A partir de aqui todo es para Comentarios.html ==============================================
+
+
+// Base
+
+.comentarios__main {
+
+    @extend.index__main;
+
+}
+
+// Grid
+
+.comentarios__grid {
+
+    width: 80%;
+    @include grid(1, 2, 2, 20px, 10px, center, center);
+}
+
+// Comentarios (cajas)
+
+.comentario {
+
+    @include box(80%, auto, $negro, 20px, 1.2);
+    border: $gris solid 1px;
+
+    @include flexbox(column, center, center, 1);
+
+    &__2 {
+
+        @extend.comentario;
+
+    }
+
+    &__3 {
+
+        @extend.comentario;
+
+    }
+
+    &__4 {
+
+        @extend.comentario;
+
+    }
+
+}
+
+// Imagenes de perfil
+
+.cfoto__img{
+
+    background-image: url(../images/perfiles/chica1.jpg);
+    background-size: contain;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    border-top: $gris solid 1px;
+    margin-left: 1rem;
+
+    &--2{
+
+        @extend.cfoto__img;
+        background-image: url(../images/perfiles/chico1.jpg);
+
+    }
+    &--3{
+
+        @extend.cfoto__img;
+        background-image: url(../images/perfiles/chico2.jpg);
+
+    }
+    &--4{
+
+        @extend.cfoto__img;
+        background-image: url(../images/perfiles/toreto.jpg);
+
+    }
+}
+
+// Comentario grid
+
+.comentario__grid {
+
+
+    @include grid(0, 1, 3, 0px, 0px, center, center) {
+
+        grid-template-columns: 100%;
+        grid-template-rows: 4rem 1fr 3rem;
+
+
+    }
+
+}
+
+// Foto
+
+.comentario__foto {
+
+    @include flexbox(row, flex-start, center, 1);
+    width: 100%;
+
+
+}
+
+// Comentario texto
+
+.comentario__texto {
+
+    @include flexbox(row, flex-start, center, 1);
+
+
+
+}
+
+// Footer de los comentarios
+
+.comentario__footer {
+
+    @include flexbox(row, space-between, center, 1);
+    width: 100%;
+
+}
+
+// ! A partir de aqui todo es para Proyectos.html ==============================================
+
+// BAse
+
+.proyectos__main{
+
+    @extend.index__main;
+
+}
+
+// Grid
+
+.proyectos__grid{
+
+    height: auto;
+    width: 80%;
+
+    @include grid(1, 2, 2, 30px, 15px, center, center);
+
+}
+
+
+
+// Proyectos
+
+.proyectos__section{
+
+    @include box(100%, inherit, transparent, 20px, 1);
+    @include flexbox(row, flex-start, center, 1);
+    position: relative;
+
+}
+
+// Paginas
+
+.pagina{
+
+    @include box(60%, 100%, white, 20px);
+    z-index: 1;
+    border: $gris solid 2px;
+    background-image: url(../images/proyectos/Coder.png);
+    background-position: left;
+    background-size: cover;
+
+    &__2{
+
+        @extend.pagina;
+        background-image: none;
+        background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+
+    }
+
+    &__3{
+
+        @extend.pagina;
+        background-image: none;
+        background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+
+    }
+
+    &__4{
+
+        @extend.pagina;
+        background-image: none;
+        background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+
+    }
+
+}
+
+
+// Descricpciones
+
+.desc__pagina{
+
+    @include box(70%, auto, $negro, 20px, 2);
+    position: absolute;
+    z-index: 2;
+    right: 0px;
+    border: $gris solid 1px;
+
+    
+}
+
+// grid de las descripciones
+
+.pagina__grid{
+
+    @include grid(0, 1, 2, 20px, 0px, flex-start, center){
+
+        grid-template-columns: 100%;
+        grid-template-rows: 3rem 1fr 3rem;
+
+    }
+
+}
 
 
 
 
 
 
-// ========================================Debug===========================================
 
-// *{
+// ! ========================================Debug===========================================
+
+// * {
 
 //     border: red solid 1px;
 
 // }
-
-
-
-
-
-
-
-
