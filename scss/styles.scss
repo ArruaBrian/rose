@@ -166,7 +166,7 @@ $breakps:(sm: 768px,
     display: grid;
     height: auto;
     min-height: 100%;
-    max-height: auto;
+
 
     @if $normal==1 {
 
@@ -753,16 +753,7 @@ body {
 .comentarios__grid {
 
     width: 80%;
-    height: auto;
     @include grid(1, 2, 2, 20px, 10px, center, center);
-
-    @include media-up(md) {
-
-        width: 80%;
-
-    }
-
-
 }
 
 // Comentarios (cajas)
@@ -834,7 +825,8 @@ body {
     @include grid(0, 1, 3, 0px, 0px, center, center) {
 
         grid-template-columns: 100%;
-        grid-template-rows: 4rem auto 3rem;
+        grid-template-rows: 4rem 1fr 3rem;
+
 
     }
 
@@ -868,6 +860,81 @@ body {
     width: 100%;
 
 }
+
+// ! A partir de aqui todo es para Proyectos.html ==============================================
+
+// BAse
+
+.proyectos__main{
+
+    @extend.index__main;
+
+}
+
+// Grid
+
+.proyectos__grid{
+
+    height: auto;
+    width: 80%;
+
+    @include grid(1, 2, 2, 30px, 15px, center, center);
+
+}
+
+
+
+// Proyectos
+
+.proyectos__section{
+
+    @include box(100%, inherit, transparent, 20px, 1);
+    @include flexbox(row, flex-start, center, 1);
+    position: relative;
+
+}
+
+// Paginas
+
+.pagina__1{
+
+    @include box(60%, 100%, white, 20px);
+    z-index: 1;
+    border: $gris solid 2px;
+    background-image: url(../images/proyectos/Coder.png);
+    background-position: left;
+    background-size: cover;
+
+}
+
+
+// Descricpciones
+
+.desc__pagina__1{
+
+    @include box(70%, auto, $negro, 20px, 2);
+    position: absolute;
+    z-index: 2;
+    right: 0px;
+    border: $gris solid 1px;
+
+    
+}
+
+// grid de las descripciones
+
+.pagina__grid{
+
+    @include grid(0, 1, 2, 20px, 0px, flex-start, center){
+
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 1fr;
+ 
+
+    }
+
+}
+
 
 
 
