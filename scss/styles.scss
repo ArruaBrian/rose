@@ -16,6 +16,7 @@
 
 // ========================================Clases de los colores===========================================
 
+
 $color:(violeta: $violeta,
     violeta__o: $violeta__o,
     gris: $gris,
@@ -971,3 +972,12 @@ body {
 //     border: red solid 1px;
 
 // }
+
+// ========================================Anti Boostrap===========================================
+
+ol{
+
+    margin: 0;
+    padding: 0;
+
+}
