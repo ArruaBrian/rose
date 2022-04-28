@@ -896,7 +896,7 @@ body {
 
 // Paginas
 
-.pagina__1{
+.pagina{
 
     @include box(60%, 100%, white, 20px);
     z-index: 1;
@@ -905,12 +905,36 @@ body {
     background-position: left;
     background-size: cover;
 
+    &__2{
+
+        @extend.pagina;
+        background-image: none;
+        background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+
+    }
+
+    &__3{
+
+        @extend.pagina;
+        background-image: none;
+        background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+
+    }
+
+    &__4{
+
+        @extend.pagina;
+        background-image: none;
+        background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+
+    }
+
 }
 
 
 // Descricpciones
 
-.desc__pagina__1{
+.desc__pagina{
 
     @include box(70%, auto, $negro, 20px, 2);
     position: absolute;
@@ -928,8 +952,7 @@ body {
     @include grid(0, 1, 2, 20px, 0px, flex-start, center){
 
         grid-template-columns: 100%;
-        grid-template-rows: 20% 1fr;
- 
+        grid-template-rows: 3rem 1fr 3rem;
 
     }
 

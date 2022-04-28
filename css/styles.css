@@ -1037,7 +1037,7 @@ body {
   position: relative;
 }
 
-.pagina__1 {
+.pagina, .pagina__4, .pagina__3, .pagina__2 {
   width: 60%;
   height: 100%;
   background-color: white;
@@ -1049,8 +1049,20 @@ body {
   background-position: left;
   background-size: cover;
 }
+.pagina__2 {
+  background-image: none;
+  background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+}
+.pagina__3 {
+  background-image: none;
+  background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+}
+.pagina__4 {
+  background-image: none;
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+}
 
-.desc__pagina__1 {
+.desc__pagina {
   width: 70%;
   height: auto;
   background-color: #040408;
@@ -1067,7 +1079,7 @@ body {
   height: auto;
   min-height: 100%;
   grid-template-columns: 100%;
-  grid-template-rows: 20% 1fr;
+  grid-template-rows: 3rem 1fr 3rem;
   -moz-column-gap: 20px;
        column-gap: 20px;
   row-gap: 0px;
