@@ -391,6 +391,7 @@ $breakps:(
         aspect-ratio: 16/5;
         padding: 10px;
         @extend.boton;
+        background-color: transparent;
 
         &__rainbow {
 
@@ -910,7 +911,7 @@ body {
 
         @extend.pagina;
         background-image: none;
-        background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+        background-image: url(../images/proyectos/gatitos.png)
 
     }
 
@@ -918,7 +919,7 @@ body {
 
         @extend.pagina;
         background-image: none;
-        background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+        background-image: url(../images/proyectos/lenguajetool.png)
 
     }
 
@@ -926,7 +927,7 @@ body {
 
         @extend.pagina;
         background-image: none;
-        background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+        background-image: url(../images/proyectos/twitter.png)
 
     }
 
@@ -1073,6 +1074,78 @@ body {
 .section__footer{
 
     @include flexbox(row, center, center, 1);
+
+}
+
+
+// ! A partir de aqui todo es para Contacto.html ==============================================
+
+// Base
+
+.contacto__main{
+
+    @extend.index__main;
+
+}
+
+// Controles de estilo para formularios
+
+.form__controls{
+
+    padding: 15px;
+    width: 60%;
+    text-align: center;
+    background-color: white;
+    border: $violeta solid 1px;
+    border-radius: 10px;
+    color: $negro;
+    margin: 10px;
+}
+
+// Container
+
+.contacto__form__container{
+
+    @include flexbox(column, center, center, 1);
+    width: 100%;
+    border: $gris solid 2px;
+    border-radius: 20px;
+    padding: 20px;
+
+    @include media-up(md){
+
+        width: 90%
+
+    }
+
+
+}
+
+// Formulario
+
+.contacto__form{
+
+    @include flexbox(column, center, center, 1);
+    width: 100%;
+
+
+}
+
+// Terminos
+
+.contacto__terminos{
+
+    @include flexbox(row, center, center, 1);
+    width: 100%;
+
+
+}
+
+// Sumbit
+
+.contacto__sumbit{
+
+    @extend.contacto__terminos;
 
 }
 

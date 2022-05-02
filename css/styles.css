@@ -614,6 +614,7 @@ template {
   height: auto;
   aspect-ratio: 16/5;
   padding: 10px;
+  background-color: transparent;
 }
 .boton__normal__rainbow {
   -webkit-animation: 4s rainborder linear infinite;
@@ -688,7 +689,7 @@ body {
   margin-right: 20px;
 }
 
-.index__main, .precios__main, .proyectos__main, .comentarios__main {
+.index__main, .contacto__main, .precios__main, .proyectos__main, .comentarios__main {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -699,7 +700,7 @@ body {
   max-width: 1280px;
 }
 @media screen and (max-width: 1020px) {
-  .index__main, .precios__main, .proyectos__main, .comentarios__main {
+  .index__main, .contacto__main, .precios__main, .proyectos__main, .comentarios__main {
     width: 100%;
   }
 }
@@ -1051,15 +1052,15 @@ body {
 }
 .pagina__2 {
   background-image: none;
-  background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+  background-image: url(../images/proyectos/gatitos.png);
 }
 .pagina__3 {
   background-image: none;
-  background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+  background-image: url(../images/proyectos/lenguajetool.png);
 }
 .pagina__4 {
   background-image: none;
-  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+  background-image: url(../images/proyectos/twitter.png);
 }
 
 .desc__pagina {
@@ -1181,4 +1182,50 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.form__controls {
+  padding: 15px;
+  width: 60%;
+  text-align: center;
+  background-color: white;
+  border: #978bda solid 1px;
+  border-radius: 10px;
+  color: #040408;
+  margin: 10px;
+}
+
+.contacto__form__container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: #C5C6C7 solid 2px;
+  border-radius: 20px;
+  padding: 20px;
+}
+@media screen and (max-width: 1020px) {
+  .contacto__form__container {
+    width: 90%;
+  }
+}
+
+.contacto__form {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.contacto__terminos, .contacto__sumbit {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }/*# sourceMappingURL=styles.css.map */

@@ -54,9 +54,56 @@
 
     <!-- Main -->
 
-    <main class="comentarios__main">
+    <main class="contacto__main">
 
         <!-- Titulos -->
+
+        <h2 class="text__xs gris m-1">Sabes donde encontrarme...</h2>
+        <h2 class="text__s violeta m-0">Contacto</h2>
+
+
+        <div class="contacto__form__container m-4">
+
+            <form class="contacto__form" action="">
+
+                <label class="text__xs violeta" for="form__nombre">Nombre</label>
+                <input required class="form__controls text__xxs" id="form__nombre" placeholder="Escriba aqui" type="text">
+                <label class="text__xs violeta" for="form__apellido">Apellido</label>
+                <input required class="form__controls text__xxs" id="form__apellido" placeholder="Escriba aqui" type="text">
+                <label class="text__xs violeta" for="form__email">Email</label>
+                <input  required class="form__controls text__xxs id="form__email" placeholder="Escriba aqui" type="email">
+
+                <!-- Text area -->
+
+                <textarea class="form__controls text__xxs" cols="30" rows="10" placeholder="Por favor detalle su pedido"></textarea>
+
+                <!-- Seleccion del plan de precios -->
+
+                <select required class="form__controls text__xxs violeta" name="">
+                    <option value="0">Seleccione una opcion</option>
+                    <option value="1">Estandar $</option>
+                    <option value="2">Premium $$</option>
+                    <option value="3">Gold $$$$$</option>
+                </select>
+
+                <!-- Terminos y condiciones -->
+
+                <div class="contacto__terminos">
+
+                    <p class="text__xs violeta m-2">Acepta los terminos y condiciones</p>
+                    <input required type="checkbox" id="">
+
+                </div>
+
+                <!-- Conversion de botones input a la clase "boton__normal" -->
+
+                <div class="contacto__sumbit">
+                    <input class="boton__normal text__xs m-2" type="submit">
+                    <input class="boton__normal text__xs" type="reset">
+                </div>
+            </form>
+
+        </div>
 
         
 
@@ -79,7 +126,9 @@
 
         <div class="footer__section--end">
             <!-- Mi instagram -->
-            <i class="fa-brands fa-instagram fa-4x footer__ig m-1 violeta"></i>
+            <a href="https://www.instagram.com/rose.web.design/?hl=es" target="__blank" class="">
+                <i class="fa-brands fa-instagram fa-4x footer__ig m-1 violeta"></i>
+            </a>
 
         </div>
 
