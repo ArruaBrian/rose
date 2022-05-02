@@ -1104,6 +1104,12 @@ body {
     border-radius: 10px;
     color: $negro;
     margin: 10px;
+
+    @include media-up(md){
+
+        width: 90%;
+
+    }
 }
 
 // Container

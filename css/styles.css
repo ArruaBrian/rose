@@ -1210,6 +1210,11 @@ body {
   color: #040408;
   margin: 10px;
 }
+@media screen and (max-width: 1020px) {
+  .form__controls {
+    width: 90%;
+  }
+}
 
 .contacto__form__container {
   display: flex;
