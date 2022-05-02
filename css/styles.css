@@ -924,7 +924,7 @@ body {
 }
 @media screen and (max-width: 768px) {
   .footer__boton {
-    font-size: 0.625rem;
+    font-size: 1rem;
   }
 }
 
@@ -1217,15 +1217,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  border: #C5C6C7 solid 2px;
+  width: 80%;
   border-radius: 20px;
   padding: 20px;
-}
-@media screen and (max-width: 1020px) {
-  .contacto__form__container {
-    width: 90%;
-  }
+  margin: 40px 0px 40px 0px;
+  background-color: rgba(4, 4, 8, 0.2);
 }
 
 .contacto__form {

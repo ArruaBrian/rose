@@ -737,7 +737,7 @@ body {
 
         // Usamos el include porque no podemos extender en un media
 
-        @include font-size(10px);
+        @include font-size(16px);
 
     }
 
@@ -1111,16 +1111,11 @@ body {
 .contacto__form__container{
 
     @include flexbox(column, center, center, 1);
-    width: 100%;
-    border: $gris solid 2px;
+    width: 80%;
     border-radius: 20px;
     padding: 20px;
-
-    @include media-up(md){
-
-        width: 90%
-
-    }
+    margin: 40px 0px 40px 0px;
+    background-color: #04040833;
 
 
 }
