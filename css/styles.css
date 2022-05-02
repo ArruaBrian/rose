@@ -362,6 +362,22 @@ template {
   color: #FADB5F;
 }
 
+.white {
+  color: white;
+}
+
+.pink {
+  color: pink;
+}
+
+.tomato {
+  color: tomato;
+}
+
+.lightgreen {
+  color: lightgreen;
+}
+
 .m-0 {
   margin: 0rem;
 }
