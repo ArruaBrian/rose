@@ -1,0 +1,25 @@
+// ========================================Paginas===========================================
+
+// Index
+
+@use './paginas/index';
+
+// Comentarios
+
+@use './paginas/comentarios';
+
+// Contacto
+
+@use './paginas/contacto';
+
+// Precios
+
+@use './paginas/precios';
+
+// Proyectos
+
+@use './paginas/proyectos';
+
+// Las paginas estan construidas a partir del root/scss/base/_base.scss
+// Por ende las paginas estan linkeadas dentro del main puesto que el 'core' de las mismas
+// esta por separado para mayor control, mantenimiento y orden de el codigo

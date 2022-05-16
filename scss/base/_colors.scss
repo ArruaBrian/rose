@@ -1,0 +1,39 @@
+// ======================= Colores ===============================================
+
+$violeta: #978bda;
+$violeta__o: #7d5597;
+$gris: #C5C6C7;
+$negro: #040408;
+$azul__o: #0e1620;
+$amarillo: #FADB5F;
+$white: white;
+$pink: pink;
+$tomato: tomato;
+$lightgreen: lightgreen;
+
+// Clases
+
+$color:(violeta: $violeta,
+    violeta__o: $violeta__o,
+    gris: $gris,
+    negro: $negro,
+    azul__o: $azul__o,
+    amarillo: $amarillo,
+    "white": $white,
+    "pink": $pink,
+    "tomato": $tomato,
+    "lightgreen": $lightgreen);
+
+// Clases
+
+@each $colors,
+$color in $color {
+
+    .#{$colors} {
+
+        color: $color;
+
+    }
+
+}
+

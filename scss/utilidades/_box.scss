@@ -1,0 +1,11 @@
+// ========================================Box===========================================
+
+@mixin box ($width, $height, $color, $br, $ar : none) {
+
+    width: $width;
+    height: $height;
+    background-color: $color;
+    border-radius: $br;
+    aspect-ratio: $ar;
+
+}

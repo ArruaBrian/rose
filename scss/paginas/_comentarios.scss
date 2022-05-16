@@ -1,0 +1,131 @@
+// ========================================Base===========================================
+
+@use '../base/base' as *;
+
+// Extension del index
+
+@use './index' as *;
+
+// ========================================Comentarios===========================================
+
+
+// Base
+
+.comentarios__main {
+
+    @extend.index__main;
+
+}
+
+// Grid
+
+.comentarios__grid {
+
+    width: 80%;
+    @include grid(1, 2, 2, 20px, 10px, center, center);
+}
+
+// Comentarios (cajas)
+
+.comentario {
+
+    @include box(80%, auto, $negro, 20px, 1.2);
+    border: $gris solid 1px;
+
+    @include flexbox(column, center, center, 1);
+
+    &__2 {
+
+        @extend.comentario;
+
+    }
+
+    &__3 {
+
+        @extend.comentario;
+
+    }
+
+    &__4 {
+
+        @extend.comentario;
+
+    }
+
+}
+
+// Imagenes de perfil
+
+.cfoto__img{
+
+    background-image: url(../images/perfiles/chica1.jpg);
+    background-size: contain;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    border-top: $gris solid 1px;
+    margin-left: 1rem;
+
+    &--2{
+
+        @extend.cfoto__img;
+        background-image: url(../images/perfiles/chico1.jpg);
+
+    }
+    &--3{
+
+        @extend.cfoto__img;
+        background-image: url(../images/perfiles/chico2.jpg);
+
+    }
+    &--4{
+
+        @extend.cfoto__img;
+        background-image: url(../images/perfiles/toreto.jpg);
+
+    }
+}
+
+// Comentario grid
+
+.comentario__grid {
+
+
+    @include grid(0, 1, 3, 0px, 0px, center, center) {
+
+        grid-template-columns: 100%;
+        grid-template-rows: 4rem 1fr 3rem;
+
+
+    }
+
+}
+
+// Foto
+
+.comentario__foto {
+
+    @include flexbox(row, flex-start, center, 1);
+    width: 100%;
+
+
+}
+
+// Comentario texto
+
+.comentario__texto {
+
+    @include flexbox(row, flex-start, center, 1);
+
+
+
+}
+
+// Footer de los comentarios
+
+.comentario__footer {
+
+    @include flexbox(row, space-between, center, 1);
+    width: 100%;
+
+}

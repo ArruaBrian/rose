@@ -1,0 +1,79 @@
+// ========================================Base===========================================
+
+@use '../base/base' as *;
+
+// Extension del index
+
+@use './index' as *;
+
+// ========================================Contacto===========================================
+
+// Base
+
+.contacto__main{
+
+    @extend.index__main;
+
+}
+
+// Controles de estilo para formularios
+
+.form__controls{
+
+    padding: 15px;
+    width: 60%;
+    text-align: center;
+    background-color: white;
+    border: $violeta solid 1px;
+    border-radius: 10px;
+    color: $negro;
+    margin: 10px;
+
+    @include media-up(md){
+
+        width: 90%;
+
+    }
+}
+
+// Container
+
+.contacto__form__container{
+
+    @include flexbox(column, center, center, 1);
+    width: 80%;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 40px 0px 40px 0px;
+    background-color: #04040833;
+
+
+}
+
+// Formulario
+
+.contacto__form{
+
+    @include flexbox(column, center, center, 1);
+    width: 100%;
+
+
+}
+
+// Terminos
+
+.contacto__terminos{
+
+    @include flexbox(row, center, center, 1);
+    width: 100%;
+
+
+}
+
+// Sumbit
+
+.contacto__sumbit{
+
+    @extend.contacto__terminos;
+
+}

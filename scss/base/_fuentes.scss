@@ -1,0 +1,51 @@
+// ========================================Dependencias===========================================
+
+@use '../utilidades/rfs' as *;
+
+
+// ========================================Textos===========================================
+
+// Fuente: Impact
+
+@font-face {
+    font-family: oswald;
+    src: url(../fonts/Oswald.ttf) format('truetype');
+}
+
+// Textos responsivos
+
+.text {
+
+    font-family: oswald;
+
+    &__xxs {
+
+        @include font-size(0.9375rem);
+        @extend.text;
+
+    }
+
+    &__xs {
+
+        @include font-size(1.25rem);
+        @extend.text;
+
+    }
+
+    &__s {
+
+        @include font-size(2.5rem);
+        @extend.text;
+
+    }
+
+    &__l {
+
+        @include font-size(3.75rem);
+        @extend.text;
+
+    }
+
+
+
+}

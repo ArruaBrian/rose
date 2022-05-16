@@ -1,0 +1,22 @@
+// ========================================Flexbox===========================================
+
+@mixin flexbox ($fdirection, $fcontent, $fitems, $i : 0) {
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: $fdirection;
+    justify-content: $fcontent;
+    align-items: $fitems;
+    $important: $i;
+
+    @if $important==0 {
+
+        @include media-up(sm) {
+
+            flex-direction: column;
+
+        }
+
+    }
+
+}

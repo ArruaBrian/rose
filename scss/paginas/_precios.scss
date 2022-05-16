@@ -1,0 +1,124 @@
+// ========================================Base===========================================
+
+@use '../base/base' as *;
+
+// Extension del index
+
+@use './index' as *;
+
+// ========================================Precios===========================================
+
+// Base
+
+.precios__main{
+
+    @extend.index__main;
+
+}
+
+// Grid
+
+.precios__grid{
+
+    width: 80%;
+    @include grid(1, 3, 1, 40px, 20px, center, center);
+
+}
+
+// Contenedor del grid y primera capa de posicionamiento
+
+.precios__section{
+
+    @include box(100%, auto, transparent, 20px, none);
+    @include flexbox(row, center, center, 1);
+
+}
+
+// Segunda capa de posicionamiento y carta de precios
+
+// Precios
+
+.section{
+
+    @include box(80%, auto, $negro, 20px, 0.5555555556);
+    @include grid(0, 0, 0, 0px, 0px, center, center){
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 4rem 1fr 4rem;
+
+    }
+
+    z-index: 1;
+    border: $gris solid 2px;
+    position: relative;
+    max-width: 300px;
+
+    &__estandar{
+
+        @extend.section;
+
+    }
+
+    &__premium{
+
+        @extend.section;
+
+    }
+
+    &__gold{
+
+        @extend.section;
+
+    }
+
+}
+
+// Header del section
+
+.section__header{
+
+    @include flexbox(row, center, center, 1);
+
+}
+
+.sheader{
+
+    &__estandar{
+
+        color: $violeta;
+
+    }
+
+    &__premium{
+
+        color: rgb(223, 43, 82);
+
+    }
+
+    &__gold{
+
+        color: $amarillo;
+
+    }
+
+
+}
+
+// Main info del section
+
+.section__info{
+
+    @include box(120%, 100%, white, 10px, none);
+    @include flexbox(row, center, center, 1);
+    animation: 4s rainborder linear infinite;
+    position: relative;
+
+}
+
+// Footer
+
+.section__footer{
+
+    @include flexbox(row, center, center, 1);
+
+}

@@ -378,26 +378,6 @@ template {
   color: lightgreen;
 }
 
-.m-0 {
-  margin: 0rem;
-}
-
-.m-1 {
-  margin: 0.625rem;
-}
-
-.m-2 {
-  margin: 1.25rem;
-}
-
-.m-3 {
-  margin: 1.875rem;
-}
-
-.m-4 {
-  margin: 2.5rem;
-}
-
 @font-face {
   font-family: oswald;
   src: url(../fonts/Oswald.ttf) format("truetype");
@@ -660,6 +640,126 @@ template {
   }
 }
 
+.m-0 {
+  margin: 0rem;
+}
+
+.m-1 {
+  margin: 0.625rem;
+}
+
+.m-2 {
+  margin: 1.25rem;
+}
+
+.m-3 {
+  margin: 1.875rem;
+}
+
+.m-4 {
+  margin: 2.5rem;
+}
+
+.m-5 {
+  margin: 3.125rem;
+}
+
+.m-6 {
+  margin: 3.75rem;
+}
+
+.m-7 {
+  margin: 4.375rem;
+}
+
+.m-8 {
+  margin: 5rem;
+}
+
+.m-9 {
+  margin: 5.625rem;
+}
+
+.m-10 {
+  margin: 6.25rem;
+}
+
+.m-11 {
+  margin: 6.875rem;
+}
+
+.m-12 {
+  margin: 7.5rem;
+}
+
+.m-13 {
+  margin: 8.125rem;
+}
+
+.m-14 {
+  margin: 8.75rem;
+}
+
+.p-0 {
+  padding: 0rem;
+}
+
+.p-1 {
+  padding: 0.625rem;
+}
+
+.p-2 {
+  padding: 1.25rem;
+}
+
+.p-3 {
+  padding: 1.875rem;
+}
+
+.p-4 {
+  padding: 2.5rem;
+}
+
+.p-5 {
+  padding: 3.125rem;
+}
+
+.p-6 {
+  padding: 3.75rem;
+}
+
+.p-7 {
+  padding: 4.375rem;
+}
+
+.p-8 {
+  padding: 5rem;
+}
+
+.p-9 {
+  padding: 5.625rem;
+}
+
+.p-10 {
+  padding: 6.25rem;
+}
+
+.p-11 {
+  padding: 6.875rem;
+}
+
+.p-12 {
+  padding: 7.5rem;
+}
+
+.p-13 {
+  padding: 8.125rem;
+}
+
+.p-14 {
+  padding: 8.75rem;
+}
+
 body {
   background: linear-gradient(180deg, rgb(14, 22, 32) 0%, rgb(22, 14, 32) 100%);
   display: flex;
@@ -705,7 +805,7 @@ body {
   margin-right: 20px;
 }
 
-.index__main, .contacto__main, .precios__main, .proyectos__main, .comentarios__main {
+.index__main, .proyectos__main, .precios__main, .contacto__main, .comentarios__main {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -716,7 +816,7 @@ body {
   max-width: 1280px;
 }
 @media screen and (max-width: 1020px) {
-  .index__main, .contacto__main, .precios__main, .proyectos__main, .comentarios__main {
+  .index__main, .proyectos__main, .precios__main, .contacto__main, .comentarios__main {
     width: 100%;
   }
 }
@@ -1019,89 +1119,51 @@ body {
   width: 100%;
 }
 
-.proyectos__grid {
-  height: auto;
-  width: 80%;
-  display: grid;
-  height: auto;
-  min-height: 100%;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  -moz-column-gap: 30px;
-       column-gap: 30px;
-  row-gap: 15px;
-  justify-items: center;
-  align-items: center;
+.form__controls {
+  padding: 15px;
+  width: 60%;
+  text-align: center;
+  background-color: white;
+  border: #978bda solid 1px;
+  border-radius: 10px;
+  color: #040408;
+  margin: 10px;
 }
 @media screen and (max-width: 1020px) {
-  .proyectos__grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: 4fr;
+  .form__controls {
+    width: 90%;
   }
 }
 
-.proyectos__section {
-  width: 100%;
-  height: inherit;
-  background-color: transparent;
+.contacto__form__container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
   border-radius: 20px;
-  aspect-ratio: 1;
+  padding: 20px;
+  margin: 40px 0px 40px 0px;
+  background-color: rgba(4, 4, 8, 0.2);
+}
+
+.contacto__form {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.contacto__terminos, .contacto__sumbit {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  position: relative;
-}
-
-.pagina, .pagina__4, .pagina__3, .pagina__2 {
-  width: 60%;
-  height: auto;
-  background-color: white;
-  border-radius: 20px;
-  aspect-ratio: 0.5555555556;
-  z-index: 1;
-  border: #C5C6C7 solid 2px;
-  background-image: url(../images/proyectos/Coder.png);
-  background-position: left;
-  background-size: cover;
-}
-.pagina__2 {
-  background-image: none;
-  background-image: url(../images/proyectos/gatitos.png);
-}
-.pagina__3 {
-  background-image: none;
-  background-image: url(../images/proyectos/lenguajetool.png);
-}
-.pagina__4 {
-  background-image: none;
-  background-image: url(../images/proyectos/twitter.png);
-}
-
-.desc__pagina {
-  width: 70%;
-  height: auto;
-  background-color: #040408;
-  border-radius: 20px;
-  aspect-ratio: 2;
-  position: absolute;
-  z-index: 2;
-  right: 0px;
-  border: #C5C6C7 solid 1px;
-}
-
-.pagina__grid {
-  display: grid;
-  height: auto;
-  min-height: 100%;
-  grid-template-columns: 100%;
-  grid-template-rows: 3rem 1fr 3rem;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
-  row-gap: 0px;
-  justify-items: flex-start;
-  align-items: center;
+  width: 100%;
 }
 
 .precios__grid {
@@ -1200,49 +1262,87 @@ body {
   align-items: center;
 }
 
-.form__controls {
-  padding: 15px;
-  width: 60%;
-  text-align: center;
-  background-color: white;
-  border: #978bda solid 1px;
-  border-radius: 10px;
-  color: #040408;
-  margin: 10px;
+.proyectos__grid {
+  height: auto;
+  width: 80%;
+  display: grid;
+  height: auto;
+  min-height: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  row-gap: 15px;
+  justify-items: center;
+  align-items: center;
 }
 @media screen and (max-width: 1020px) {
-  .form__controls {
-    width: 90%;
+  .proyectos__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr;
   }
 }
 
-.contacto__form__container {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  border-radius: 20px;
-  padding: 20px;
-  margin: 40px 0px 40px 0px;
-  background-color: rgba(4, 4, 8, 0.2);
-}
-
-.contacto__form {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.proyectos__section {
   width: 100%;
-}
-
-.contacto__terminos, .contacto__sumbit {
+  height: inherit;
+  background-color: transparent;
+  border-radius: 20px;
+  aspect-ratio: 1;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  width: 100%;
-}/*# sourceMappingURL=styles.css.map */
+  position: relative;
+}
+
+.pagina, .pagina__4, .pagina__3, .pagina__2 {
+  width: 60%;
+  height: auto;
+  background-color: white;
+  border-radius: 20px;
+  aspect-ratio: 0.5555555556;
+  z-index: 1;
+  border: #C5C6C7 solid 2px;
+  background-image: url(../images/proyectos/Coder.png);
+  background-position: left;
+  background-size: cover;
+}
+.pagina__2 {
+  background-image: none;
+  background-image: url(../images/proyectos/gatitos.png);
+}
+.pagina__3 {
+  background-image: none;
+  background-image: url(../images/proyectos/lenguajetool.png);
+}
+.pagina__4 {
+  background-image: none;
+  background-image: url(../images/proyectos/twitter.png);
+}
+
+.desc__pagina {
+  width: 70%;
+  height: auto;
+  background-color: #040408;
+  border-radius: 20px;
+  aspect-ratio: 2;
+  position: absolute;
+  z-index: 2;
+  right: 0px;
+  border: #C5C6C7 solid 1px;
+}
+
+.pagina__grid {
+  display: grid;
+  height: auto;
+  min-height: 100%;
+  grid-template-columns: 100%;
+  grid-template-rows: 3rem 1fr 3rem;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 0px;
+  justify-items: flex-start;
+  align-items: center;
+}/*# sourceMappingURL=main.css.map */
