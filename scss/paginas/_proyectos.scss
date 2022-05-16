@@ -47,7 +47,7 @@
     @include box(60%, auto, white, 20px, 0.5555555556);
     z-index: 1;
     border: $gris solid 2px;
-    background-image: url(../images/proyectos/Coder.png);
+    background-image: url(../images/proyectos/Coder.webp);
     background-position: left;
     background-size: cover;
 
@@ -55,7 +55,7 @@
 
         @extend.pagina;
         background-image: none;
-        background-image: url(../images/proyectos/gatitos.png)
+        background-image: url(../images/proyectos/gatitos.webp)
 
     }
 
@@ -63,7 +63,7 @@
 
         @extend.pagina;
         background-image: none;
-        background-image: url(../images/proyectos/lenguajetool.png)
+        background-image: url(../images/proyectos/lenguajetool.webp)
 
     }
 
@@ -71,7 +71,7 @@
 
         @extend.pagina;
         background-image: none;
-        background-image: url(../images/proyectos/twitter.png)
+        background-image: url(../images/proyectos/twitter.webp)
 
     }
 

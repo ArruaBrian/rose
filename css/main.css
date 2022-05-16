@@ -790,7 +790,7 @@ body {
   height: 80px;
   width: auto;
   aspect-ratio: 1/1;
-  background-image: url("../logo.png");
+  background-image: url("../logo.svg");
   background-size: contain;
 }
 
@@ -839,7 +839,7 @@ body {
   width: 80%;
   height: auto;
   aspect-ratio: 16/14;
-  background-image: url(../images/blobs/primero.png);
+  background-image: url(../images/blobs/blob_1.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -1015,7 +1015,7 @@ body {
   height: 80px;
   width: 80px;
   aspect-ratio: 1/1;
-  background-image: url("../logo.png");
+  background-image: url("../logo.svg");
   background-size: contain;
 }
 
@@ -1062,7 +1062,7 @@ body {
   align-items: center;
 }
 .cfoto__img, .cfoto__img--4, .cfoto__img--3, .cfoto__img--2 {
-  background-image: url(../images/perfiles/chica1.jpg);
+  background-image: url(../images/perfiles/chica1.webp);
   background-size: contain;
   width: 3rem;
   height: 3rem;
@@ -1071,13 +1071,13 @@ body {
   margin-left: 1rem;
 }
 .cfoto__img--2 {
-  background-image: url(../images/perfiles/chico1.jpg);
+  background-image: url(../images/perfiles/chico1.webp);
 }
 .cfoto__img--3 {
-  background-image: url(../images/perfiles/chico2.jpg);
+  background-image: url(../images/perfiles/chico2.webp);
 }
 .cfoto__img--4 {
-  background-image: url(../images/perfiles/toreto.jpg);
+  background-image: url(../images/perfiles/toreto.webp);
 }
 
 .comentario__grid {
@@ -1305,21 +1305,21 @@ body {
   aspect-ratio: 0.5555555556;
   z-index: 1;
   border: #C5C6C7 solid 2px;
-  background-image: url(../images/proyectos/Coder.png);
+  background-image: url(../images/proyectos/Coder.webp);
   background-position: left;
   background-size: cover;
 }
 .pagina__2 {
   background-image: none;
-  background-image: url(../images/proyectos/gatitos.png);
+  background-image: url(../images/proyectos/gatitos.webp);
 }
 .pagina__3 {
   background-image: none;
-  background-image: url(../images/proyectos/lenguajetool.png);
+  background-image: url(../images/proyectos/lenguajetool.webp);
 }
 .pagina__4 {
   background-image: none;
-  background-image: url(../images/proyectos/twitter.png);
+  background-image: url(../images/proyectos/twitter.webp);
 }
 
 .desc__pagina {

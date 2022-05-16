@@ -58,7 +58,7 @@
 
 .cfoto__img{
 
-    background-image: url(../images/perfiles/chica1.jpg);
+    background-image: url(../images/perfiles/chica1.webp);
     background-size: contain;
     width: 3rem;
     height: 3rem;
@@ -69,19 +69,19 @@
     &--2{
 
         @extend.cfoto__img;
-        background-image: url(../images/perfiles/chico1.jpg);
+        background-image: url(../images/perfiles/chico1.webp);
 
     }
     &--3{
 
         @extend.cfoto__img;
-        background-image: url(../images/perfiles/chico2.jpg);
+        background-image: url(../images/perfiles/chico2.webp);
 
     }
     &--4{
 
         @extend.cfoto__img;
-        background-image: url(../images/perfiles/toreto.jpg);
+        background-image: url(../images/perfiles/toreto.webp);
 
     }
 }
