@@ -700,6 +700,26 @@ template {
   margin: 8.75rem;
 }
 
+.m-15 {
+  margin: 9.375rem;
+}
+
+.m-16 {
+  margin: 10rem;
+}
+
+.m-17 {
+  margin: 10.625rem;
+}
+
+.m-18 {
+  margin: 11.25rem;
+}
+
+.m-19 {
+  margin: 11.875rem;
+}
+
 .p-0 {
   padding: 0rem;
 }
@@ -758,6 +778,26 @@ template {
 
 .p-14 {
   padding: 8.75rem;
+}
+
+.p-15 {
+  padding: 9.375rem;
+}
+
+.p-16 {
+  padding: 10rem;
+}
+
+.p-17 {
+  padding: 10.625rem;
+}
+
+.p-18 {
+  padding: 11.25rem;
+}
+
+.p-19 {
+  padding: 11.875rem;
 }
 
 body {
