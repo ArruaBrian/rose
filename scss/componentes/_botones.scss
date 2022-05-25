@@ -7,16 +7,33 @@
 
 // ========================================Botones===========================================
 
-.boton {
+// Boton
 
+@mixin boton ($width) {
 
-    color: $violeta;
-    border: $violeta solid 1px;
-    border-radius: 60px;
+    width: $width;
+    padding: 9px 15px 9px 15px;
     transition: all 0.2s;
     text-decoration: none;
+    border-radius: 30px;
+    box-sizing: border-box;
     @include flexbox(row, center, center, 1);
     cursor: pointer;
+    
+}
+
+// Boton normal
+
+.boton__normal{
+
+    @include boton(auto);
+    color: $violeta;
+    border: $violeta solid 1px;
+    border-radius: 10px;
+    background-color: inherit;
+
+
+    // ========== Version dektop
 
     @media (hover: hover) {
 
@@ -26,6 +43,13 @@
             color: $violeta__o;
             transform: scale(1.25);
             transition: all 0.2s;
+
+        }
+
+        &:active {
+
+            transform: scale(1.1);
+            transition: all 0.1s;
 
         }
 
@@ -44,104 +68,156 @@
 
     }
 
-    &__navbar {
+}
 
-        width: 40px;
-        height: auto;
-        aspect-ratio: 1/1;
-        @extend.boton;
 
-        &__rainbow {
+// Boton secundario
 
-            @extend.boton__navbar;
-            animation: 4s rainborder linear infinite;
+.boton__secundario{
 
-            @media (hover: hover) {
+    @include boton(auto);
+    color: $violeta__o;
+    border: $violeta solid 1px;
+    border-radius: 10px;
+    background-color: white;
 
-                &:hover {
 
-                    animation: 4s rainbk linear infinite;
-                    border: $violeta solid 1px;
-                    color: white;
-                    transform: scale(1.25);
-                    transition: all 0.2s;
+    // ========== Version dektop
 
-                }
+    @media (hover: hover) {
 
-            }
+        &:hover {
 
-            @media (hover: none) {
+            background-color: inherit;
+            color: $violeta;
+            transform: scale(1.25);
+            transition: all 0.2s;
 
-                &:active {
+        }
 
-                    background-color: white;
-                    color: $violeta__o;
-                    transform: scale(1.25);
-                    transition: all 0.2s;
+        &:active {
 
-                }
-
-            }
-
+            transform: scale(1.1);
+            transition: all 0.1s;
 
         }
 
     }
 
-    &__normal {
+    @media (hover: none) {
 
-        width: auto;
-        height: auto;
-        aspect-ratio: 16/5;
-        padding: 10px;
-        @extend.boton;
-        background-color: transparent;
+        &:active {
 
-        &__rainbow {
-
-            animation: 4s rainborder linear infinite;
-            @extend.boton__normal;
-
-        }
-
-    }
-
-    &__fill {
-
-        @extend.boton;
-
-        background-color: $violeta;
-        border: $gris solid 1px;
-        color: $gris;
-
-        @media (hover: hover) {
-
-            &:hover {
-
-                border: $violeta solid 1px;
-                color: $violeta__o;
-                background-color: white;
-                transform: scale(1.25);
-                transition: all 0.2s;
-
-            }
-
-        }
-
-        @media (hover: none) {
-
-            &:active {
-
-                border: $violeta solid 1px;
-                color: $violeta__o;
-                background-color: white;
-                transform: scale(1.25);
-                transition: all 0.2s;
-
-            }
+            background-color: white;
+            color: $violeta__o;
+            transform: scale(1.25);
+            transition: all 0.2s;
 
         }
 
     }
 
 }
+
+// Boton del navbar
+
+.boton__navbar{
+
+    @include boton(40px);
+    color: $violeta;
+    border: $violeta solid 1px;
+    aspect-ratio: 1;
+
+
+    // ========== Version dektop
+
+    @media (hover: hover) {
+
+        &:hover {
+
+            background-color: white;
+            color: $violeta__o;
+            transform: scale(1.25);
+            transition: all 0.2s;
+
+        }
+
+    }
+
+    // ======== Version mobile   
+
+    // A pesar de que a simple vista no se vea cambios
+    // Esto lo hago para evitar el molesto tick del :hover en mobile
+    // Activando el efecto cuando este es pulsado
+
+    @media (hover: none) {
+
+        &:active {
+
+            background-color: white;
+            color: $violeta__o;
+            transform: scale(1.25);
+            transition: all 0.2s;
+
+        }
+
+    }
+
+}
+
+
+// Boton especial para el navbar
+
+.boton__navbar__rainbow {
+
+    @extend.boton__navbar; // Extendemos el boton normal
+
+    animation: 4s rainborder linear infinite; // Efecto de borde rainbow
+
+    @media (hover: hover) {
+
+        // ========= Desktop
+
+        &:hover {
+
+            animation: 4s rainbk linear infinite;
+            border: $violeta solid 1px;
+            color: white;
+            transform: scale(1.25);
+            transition: all 0.2s;
+
+        }
+
+    }
+
+    // ================== Mobile
+
+    @media (hover: none) {
+
+        &:active {
+
+            background-color: white;
+            color: $violeta__o;
+            transform: scale(1.25);
+            transition: all 0.2s;
+
+        }
+
+    }
+}
+
+
+// Boton especial
+
+// Boton primario
+
+
+// Boton secundario 
+
+
+// Boton para los comentarios
+
+
+
+// Boton para los precios
+

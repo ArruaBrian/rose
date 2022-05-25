@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -65,14 +66,14 @@
 
         <!-- Títulos -->
 
-        <p class="text__xs gris m-1">Conoce mis...</p>
-        <h1 class="text__s violeta m-0">Proyectos</h1>
+        <p data-aos-duration="3000" data-aos="zoom-in" class="text__xs gris m-1">Conoce mis...</p>
+        <h1 data-aos-duration="3000" data-aos="zoom-in" class="text__s violeta m-0">Proyectos</h1>
 
         <div class="proyectos__grid m-3">
 
             <!-- Pagina 1 -->
 
-            <div class="proyectos__section">
+            <div data-aos-duration="2000" data-aos="fade-right" class="proyectos__section">
 
                 <div class="pagina">
 
@@ -85,7 +86,7 @@
 
                         <h2 style="margin: 20px 0px 10px 20px;" class="text__xxs gris">CoderHouse</h2>
 
-                        <h2 style="opacity: 0.8;" class="text__xxs gris m-2">
+                        <h2 style="opacity: 0.8;" class="text__xxs lato gris m-2">
 
                             Así es soy el dueño de CoderHouse.
 
@@ -103,7 +104,7 @@
 
             <!-- Pagina 2 -->
 
-            <div class="proyectos__section">
+            <div data-aos-duration="2000" data-aos="fade-left" class="proyectos__section">
 
                 <div class="pagina__2">
 
@@ -134,7 +135,7 @@
 
             <!-- Pagina 3 -->
 
-            <div class="proyectos__section">
+            <div data-aos-duration="2000" data-aos="fade-right" class="proyectos__section">
 
                 <div class="pagina__3">
 
@@ -165,7 +166,7 @@
 
             <!-- Pagina 4 -->
 
-            <div class="proyectos__section">
+            <div data-aos-duration="2000" data-aos="fade-left" class="proyectos__section">
 
                 <div class="pagina__4">
 
@@ -204,7 +205,7 @@
 
         <div class="footer__section">
             <!-- Boton de contacto -->
-            <a class="footer__boton boton__normal__rainbow m-1" href="contacto.html">Contactame</a>
+            <a class="footer__boton boton__secundario m-1" href="contacto.html">Contactame</a>
         </div>
 
         <div class="footer__section--center">
@@ -225,6 +226,12 @@
         </div>
 
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 

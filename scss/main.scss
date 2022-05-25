@@ -1,5 +1,9 @@
 // ========================================Paginas===========================================
 
+// Layout
+
+@forward './paginas/layout';
+
 // Index
 
 @use './paginas/index';

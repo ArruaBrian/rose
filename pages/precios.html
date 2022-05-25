@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -78,133 +79,26 @@
 
                 <div class="section__estandar">
 
-                    <!-- Header -->
+                    <div class="section__header banner__estandar">
 
-                    <div class="section__header">
-
-                        <h2 class="text__xs sheader__estandar">
-
-                            Estandar
-
-                        </h2>
+                        <h2 class="text__xs m-0">Estandar <br><span class="text__xxs dark__gris lato">Proyectos normales</span></h2>
 
                     </div>
 
-                    <!-- Main info -->
+                    <div class="section__main">
 
-                    <div class="section__info">
+                        <ul class="text__xs gris smain__lista">
 
-                        <ul style="line-height: 32px; padding: 0; list-style: none; opacity: 0.8;"
-                            class="text__xxs m-1">
+                            <li>Wireframes <br><span class="text__xxs dark__gris lato justify">El wireframe es un prototipo meramente visual del se servira para evaluar su proyecto</span></li>
 
-                            <li><strong>-</strong> Pagina simple</li>
-                            <li><strong>-</strong> Wireframes de 2 paginas</li>
-                            <li><strong>-</strong> Mantenimiento 1 mes</li>
+                            <li>Pagina simple <br><span class="text__xxs dark__gris lato justify">Una landing page simple sin mucha fuincionalidad, ideal para negocios pequenos</span></li>
+
+                            <li>Subida al servidor <br><span class="text__xxs dark__gris lato justify">Contara con dominio, servidor y certificado SSL incluidos</span></li>
 
                         </ul>
 
 
-                    </div>
 
-                    <!-- Footer -->
-
-                    <div class="section__footer">
-
-                        <a class="text__xxs boton__normal m-1" href="contacto.html">45 u$s</a>
-
-                    </div>
-
-
-
-                </div>
-
-            </div>
-
-            <!-- Premium -->
-
-            <div class="precios__section">
-
-                <div class="section__premium">
-
-                    <!-- Header -->
-
-                    <div class="section__header">
-
-                        <h2 class="text__xs sheader__premium">
-
-                            Premium
-
-                        </h2>
-
-                    </div>
-
-                    <!-- Main info -->
-
-                    <div class="section__info">
-
-                        <ul style="line-height: 32px; padding: 0; list-style: none; opacity: 0.8;"
-                            class="text__xxs m-1">
-
-                            <li><strong>-</strong> Pagina completa</li>
-                            <li><strong>-</strong> Wireframes de 4 paginas</li>
-                            <li><strong>-</strong> Mantenimiento 3 mes</li>
-
-                        </ul>
-
-
-                    </div>
-
-                    <!-- Footer -->
-
-                    <div class="section__footer">
-
-                        <a class="text__xxs boton__normal m-1" href="contacto.html">90 u$d</a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Gold -->
-
-            <div class="precios__section">
-
-                <div class="section__gold">
-
-                    <!-- Header -->
-
-                    <div class="section__header">
-
-                        <h2 class="text__xs sheader__gold">
-
-                            Gold
-
-                        </h2>
-
-                    </div>
-
-                    <!-- Main info -->
-
-                    <div class="section__info">
-
-                        <ul style="line-height: 32px; padding: 0; list-style: none; opacity: 0.8;"
-                            class="text__xxs m-1">
-
-                            <li><strong>-</strong> Wireframes de todas las paginas</li>
-                            <li><strong>-</strong> Mantenimiento 6 meses</li>
-                            <li><strong>-</strong> 0 costos por updates</li>
-
-                        </ul>
-
-
-                    </div>
-
-                    <!-- Footer -->
-
-                    <div class="section__footer">
-
-                        <a class="text__xxs boton__normal m-1" href="contacto.html">120 u$d</a>
 
                     </div>
 
@@ -212,6 +106,7 @@
                 </div>
 
             </div>
+
 
         </div>
 
@@ -224,7 +119,7 @@
 
         <div class="footer__section">
             <!-- Boton de contacto -->
-            <a class="footer__boton boton__normal__rainbow m-1" href="contacto.html">Contactame</a>
+            <a class="footer__boton boton__secundario m-1" href="contacto.html">Contactame</a>
         </div>
 
         <div class="footer__section--center">
@@ -245,6 +140,12 @@
         </div>
 
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 

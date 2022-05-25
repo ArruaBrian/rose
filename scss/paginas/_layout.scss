@@ -1,0 +1,141 @@
+// ========================================Base===========================================
+
+@use '../base/base' as *;
+@use '../utilidades/rfs' as *;
+
+
+// ========================================Body===========================================
+
+body {
+
+    background: linear-gradient(180deg, rgba(14, 22, 32, 1) 0%, rgba(22, 14, 32, 1) 100%);
+
+    // Flexbox
+
+    @include flexbox(column, center, center, 1);
+
+}
+
+
+
+// ========================================Header===========================================
+
+// Base
+
+.global__header {
+
+    @include flexbox(row, space-between, center, 1);
+
+    height: 120px;
+    width: 80%;
+    max-width: 1280px;
+
+    @include media-up(md) {
+
+        width: 100%;
+
+    }
+
+}
+
+// Logo
+
+.header__logo {
+
+    order: 1;
+
+    height: 80px;
+    width: auto;
+    aspect-ratio: 1/1;
+    background-image: url('../logo.svg');
+    background-size: contain;
+
+}
+
+// navbar
+
+.header__navbar {
+
+    @include flexbox(row, space-between, center, 1);
+    order: 2;
+
+    width: 250px;
+    list-style: none;
+    padding: 20px;
+    box-sizing: border-box
+}
+
+
+// ========================================footer===========================================
+
+// Base
+
+.global__footer {
+
+    @include flexbox(row, space-between, center, 1);
+    height: 180px;
+    width: 80%;
+    max-width: 1280px;
+    border-radius: 10px;
+    border-top: $violeta solid 1px;
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    @include media-up(md) {
+
+        width: 100%;
+
+    }
+
+}
+
+// Footer section (segunda capa de alineacion con flex)
+
+.footer__section {
+
+    @include flexbox(row, flex-start, center, 1);
+    width: 33%;
+
+    &--center {
+
+        @include flexbox(row, center, center, 1);
+        width: 33%;
+
+    }
+
+    &--end {
+
+        @include flexbox(row, flex-end, center, 1);
+        width: 33%;
+
+    }
+
+}
+
+.footer__logo__img {
+
+    height: 80px;
+    width: 80px;
+    aspect-ratio: 1/1;
+    background-image: url('../logo.svg');
+    background-size: contain;
+
+}
+
+// Footer boton
+
+.footer__boton {
+
+    justify-content: flex-start;
+    @extend.text__xs;
+
+    @include media-up(sm) {
+
+        // Usamos el include porque no podemos extender en un media
+
+        @include font-size(16px);
+
+    }
+
+}

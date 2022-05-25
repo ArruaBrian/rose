@@ -95,6 +95,7 @@
 
 .pagina__grid{
 
+
     @include grid(0, 1, 2, 20px, 0px, flex-start, center){
 
         grid-template-columns: 100%;

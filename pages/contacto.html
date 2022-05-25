@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -84,7 +85,7 @@
 
                 <!-- Seleccion del plan de precios -->
 
-                <select required class="form__controls text__xxs violeta" name="">
+                <select required class="form__controls text__xxs gris" name="">
                     <option value="0">Seleccione una opcion</option>
                     <option value="1">Estandar $</option>
                     <option value="2">Premium $$</option>
@@ -103,7 +104,7 @@
                 <!-- Conversion de botones input a la clase "boton__normal" -->
 
                 <div class="contacto__sumbit">
-                    <input class="boton__normal text__xs m-2" type="submit">
+                    <input class="boton__secundario text__xs m-2" type="submit">
                     <input class="boton__normal text__xs" type="reset">
                 </div>
             </form>
@@ -119,7 +120,7 @@
 
         <div class="footer__section">
             <!-- Boton de contacto -->
-            <a class="footer__boton boton__normal__rainbow m-1" href="contacto.html">Contactame</a>
+            <a class="footer__boton boton__secundario m-1" href="contacto.html">Contactame</a>
         </div>
 
         <div class="footer__section--center">
@@ -139,6 +140,14 @@
 
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
 </body>
+
+
 
 </html>

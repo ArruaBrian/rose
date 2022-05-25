@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -22,7 +23,7 @@
 
     <!-- Header -->
 
-    <header class="global__header">
+    <header data-aos="fade-down" data-aos-duration="3000" class="global__header">
 
         <!-- Logo -->
 
@@ -63,15 +64,15 @@
 
         <!-- Titulos -->
 
-        <p class="text__xs gris m-1">Conoceme...</p>
+        <p data-aos-duration="3000" data-aos="zoom-in" class="text__xs gris m-1">Conoceme...</p>
 
 
-        <h1 class="text__s violeta m-0">Mi nombre es Brian</h1>
+        <h1 data-aos-duration="3000" data-aos="zoom-in" class="text__s violeta m-0">Mi nombre es Brian</h1>
 
 
         <!-- Rick -->
 
-        <div class="index__blob">
+        <div data-aos-duration="3000" data-aos="zoom-in" class="index__blob">
 
             <!-- <iframe class="index__rick" 
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&amp;" frameborder="0"></iframe> -->
@@ -83,7 +84,9 @@
 
         <!-- Social -->
 
-        <div class="global__social">
+        <div data-aos="fade-right" class="global__social">
+
+            <div class="social__bar__position">
 
             <div class="social__bar">
 
@@ -109,19 +112,21 @@
 
             </div>
 
+            </div>
+
         </div>
 
         <!-- Titulos -->
 
-        <h2 class="text__xs gris m-1">Lo que puedo hacer...</h2>
+        <h2 data-aos-duration="3000" data-aos="zoom-in" class="text__xs gris m-1">Lo que puedo hacer...</h2>
 
-        <h2 class="text__s violeta m-0">Mis habilidades</h2>
+        <h2 data-aos-duration="3000" data-aos="zoom-in" class="text__s violeta m-0">Mis habilidades</h2>
 
         <div class="index__skills m-10">
 
             <!-- github -->
 
-            <div class="skills__section">
+            <div data-aos-duration="1000" data-aos="flip-left" class="skills__section">
 
                 <div class="section__title">
 
@@ -150,7 +155,7 @@
 
             <!-- Html y css -->
             
-            <div class="skills__section">
+            <div data-aos-duration="1000" data-aos="flip-right" class="skills__section">
 
                 <div class="section__title">
 
@@ -179,7 +184,7 @@
 
             <!-- Sass -->
 
-            <div class="skills__section">
+            <div data-aos-duration="1000" data-aos="flip-left" class="skills__section">
 
                 <div class="section__title">
 
@@ -207,7 +212,7 @@
 
             <!-- Figma -->
 
-            <div class="skills__section">
+            <div  data-aos-duration="1000" data-aos="flip-right" class="skills__section">
 
                 <div class="section__title">
 
@@ -245,12 +250,12 @@
 
     </main>
 
-    <footer class="global__footer">
+    <footer data-aos="fade-down" class="global__footer">
 
 
         <div class="footer__section">
             <!-- Boton de contacto -->
-            <a class="footer__boton boton__normal__rainbow m-1" href="./pages/contacto.html">Contactame</a>
+            <a class="footer__boton boton__secundario m-1" href="./pages/contacto.html">Contactame</a>
         </div>
 
         <div class="footer__section--center">
@@ -269,6 +274,12 @@
         </div>
 
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 

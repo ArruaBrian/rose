@@ -9,7 +9,12 @@
 
 @font-face {
     font-family: oswald;
-    src: url(../fonts/Oswald.ttf) format('truetype');
+    src: url(../../fonts/Oswald.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: lato;
+    src: url(../../fonts/Lato.ttf) format('truetype');
 }
 
 // Textos responsivos
@@ -47,5 +52,17 @@
     }
 
 
+
+}
+
+.lato{
+
+    font-family: lato;
+
+}
+
+.justify{
+
+    text-align: justify;
 
 }
