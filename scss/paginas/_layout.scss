@@ -73,41 +73,22 @@ body {
 .global__footer {
 
     @include flexbox(row, space-between, center, 1);
-    height: 180px;
+    height: auto;
+    min-height: 180px;
     width: 80%;
     max-width: 1280px;
     border-radius: 10px;
     border-top: $violeta solid 1px;
     padding: 20px;
+    position: relative;
 
     box-sizing: border-box;
 
     @include media-up(md) {
 
         width: 100%;
-
-    }
-
-}
-
-// Footer section (segunda capa de alineacion con flex)
-
-.footer__section {
-
-    @include flexbox(row, flex-start, center, 1);
-    width: 33%;
-
-    &--center {
-
-        @include flexbox(row, center, center, 1);
-        width: 33%;
-
-    }
-
-    &--end {
-
-        @include flexbox(row, flex-end, center, 1);
-        width: 33%;
+        @include flexbox(column, center, center, 1);
+        gap: 20px;
 
     }
 

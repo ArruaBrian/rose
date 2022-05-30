@@ -13,6 +13,56 @@
 .precios__main{
 
     @extend.index__main;
+    margin-bottom: 100px;
+
+}
+
+// Banner de introducción
+
+.precios__banner{
+
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    background-color: white;
+    padding: 15px;
+    box-sizing: border-box;
+    position: relative;
+    margin: 350px 0px 350px 0px;
+    z-index: 1;
+
+    // Banner top
+
+    &__top{
+
+        width: 100%;
+        height: 450px;
+        background-image: url(../../images/blobs/separadores/s__top.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 20px;
+        z-index: -10;
+
+
+    }
+
+    // Banner bot
+
+    &__bot{
+
+        width: 100%;
+        height: 450px;
+        background-image: url(../../images/blobs/separadores/s__bot.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 850px;
+        transform: rotate(180deg);
+        z-index: -10;
+
+
+    }
 
 }
 
@@ -20,8 +70,8 @@
 
 .precios__grid{
 
-    width: 80%;
-    @include grid(3, 1, 1, 40px, 20px, center, center);
+    width: 90%;
+    @include grid(1, 3, 1, 30px, 30px, center, center);
 
 }
 
@@ -46,13 +96,14 @@
 
         grid-template-columns: 1fr;
         grid-template-rows: auto 3fr 1fr;
-        gap: 10px;
 
     }
 
     z-index: 1;
     border: $gris solid 2px;
+    box-shadow: 5px 5px $gris, 10px 10px $gris;
     position: relative;
+    min-height: 600px;
     max-width: 300px;
 
     &__estandar{
@@ -65,11 +116,29 @@
 
         @extend.section;
 
+        border: rgb(223, 21, 82) solid 2px;
+        box-shadow: 5px 5px rgb(223, 21, 82), 10px 10px rgb(223, 21, 82);
+
+        & ul{
+
+            list-style-type: '+  ';
+
+        }
+
     }
 
     &__gold{
 
         @extend.section;
+
+        border: rgb(235, 180, 47) solid 2px;
+        box-shadow: 5px 5px rgb(235, 180, 47), 10px 10px rgb(235, 180, 47);
+
+        & ul{
+
+            list-style-type: '+  ';
+
+        }
 
     }
 
@@ -100,6 +169,38 @@
         border-top: #99a3b9 solid 5px;
     }
 
+    &__premium{
+
+        @extend.banner__estandar;
+        color: rgb(223, 21, 82);
+        background-color: rgba(223, 21, 82, 0.2);
+        border-top: rgb(223, 21, 82) solid 5px;
+
+        & span{
+
+            color: rgb(223, 21, 82, 0.5);
+
+        }
+
+    }
+
+    &__gold{
+
+        @extend.banner__estandar;
+        color: rgb(235, 180, 47);
+        background-color: rgb(235, 180, 47, 0.2);
+        border-top: rgb(235, 180, 47) solid 5px;
+
+        & span{
+
+            color: rgb(235, 180, 47, 0.5);
+
+        }
+
+    }
+
+
+
 
 }
 
@@ -117,7 +218,22 @@
 
 .smain__lista{
 
-    @include flexbox(column, flex-start flex-start, 1);
+    @include flexbox(column, flex-start, flex-start, 1);
     gap: 20px;
+
+}
+
+// Footer
+
+.section__footer{
+
+    @include flexbox (row, center, center, 1);
+    padding: 10px;
+    column-gap: 25px;
+    row-gap: 0px;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
 
 }
