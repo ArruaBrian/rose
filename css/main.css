@@ -388,7 +388,7 @@ template {
 }
 @font-face {
   font-family: lato;
-  src: url(../../fonts/Lato.ttf) format("truetype");
+  src: url(../fonts/Lato.ttf) format("truetype");
 }
 .text, .text__l, .text__s, .text__xs, .footer__boton, .text__xxs {
   font-family: oswald;
@@ -1266,9 +1266,9 @@ body {
   position: absolute;
   left: 0px;
   top: 200px;
-  opacity: 0.05;
+  opacity: 0.1;
   transform: rotate(-20deg);
-  background-image: url(../../images/emojis/cara__corazones.svg);
+  background-image: url(../images/emojis/corazon.svg);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: -10;
@@ -1280,9 +1280,9 @@ body {
   position: absolute;
   right: 0px;
   top: 600px;
-  opacity: 0.05;
+  opacity: 0.1;
   transform: rotate(20deg);
-  background-image: url(../../images/emojis/pensar.svg);
+  background-image: url(../images/emojis/fuego.svg);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: -10;
@@ -1335,19 +1335,19 @@ body {
   bottom: 0px;
 }
 .globo__alana {
-  background-image: url(../../images/perfiles/chica1.webp);
+  background-image: url(../images/perfiles/chica1.webp);
   background-size: contain;
 }
 .globo__junior {
-  background-image: url(../../images/perfiles/chico1.webp);
+  background-image: url(../images/perfiles/chico1.webp);
   background-size: contain;
 }
 .globo__george {
-  background-image: url(../../images/perfiles/chico2.webp);
+  background-image: url(../images/perfiles/chico2.webp);
   background-size: contain;
 }
 .globo__toreto {
-  background-image: url(../../images/perfiles/toreto.webp);
+  background-image: url(../images/perfiles/toreto.webp);
   background-size: contain;
 }
 
@@ -1430,7 +1430,7 @@ body {
 .precios__banner__top {
   width: 100%;
   height: 450px;
-  background-image: url(../../images/blobs/separadores/s__top.svg);
+  background-image: url(../images/blobs/separadores/s__top.svg);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -1440,7 +1440,7 @@ body {
 .precios__banner__bot {
   width: 100%;
   height: 450px;
-  background-image: url(../../images/blobs/separadores/s__bot.svg);
+  background-image: url(../images/blobs/separadores/s__bot.svg);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;

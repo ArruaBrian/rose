@@ -30,9 +30,9 @@
         position: absolute;
         left: 0px;
         top: 200px;
-        opacity: 0.05;
+        opacity: 0.1;
         transform: rotate(-20deg);
-        background-image: url(../../images/emojis/cara__corazones.svg);
+        background-image: url(../images/emojis/corazon.svg);
         background-size: contain;
         background-repeat: no-repeat;
         z-index: -10;
@@ -47,9 +47,9 @@
         position: absolute;
         right: 0px;
         top: 600px;
-        opacity: 0.05;
+        opacity: 0.1;
         transform: rotate(20deg);
-        background-image: url(../../images/emojis/pensar.svg);
+        background-image: url(../images/emojis/fuego.svg);
         background-size: contain;
         background-repeat: no-repeat;
         z-index: -10;
@@ -119,7 +119,7 @@
     &__alana{
 
         @extend.globo;
-        background-image: url(../../images/perfiles/chica1.webp);
+        background-image: url(../images/perfiles/chica1.webp);
         background-size: contain;
 
     }
@@ -127,7 +127,7 @@
     &__junior{
 
         @extend.globo;
-        background-image: url(../../images/perfiles/chico1.webp);
+        background-image: url(../images/perfiles/chico1.webp);
         background-size: contain;
 
     }
@@ -135,7 +135,7 @@
     &__george{
 
         @extend.globo;
-        background-image: url(../../images/perfiles/chico2.webp);
+        background-image: url(../images/perfiles/chico2.webp);
         background-size: contain;
 
     }
@@ -143,7 +143,7 @@
     &__toreto{
 
         @extend.globo;
-        background-image: url(../../images/perfiles/toreto.webp);
+        background-image: url(../images/perfiles/toreto.webp);
         background-size: contain;
 
     }
