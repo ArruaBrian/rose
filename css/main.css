@@ -1265,7 +1265,7 @@ body {
   height: 500px;
   position: absolute;
   left: 0px;
-  top: 200px;
+  top: 500px;
   opacity: 0.1;
   transform: rotate(-20deg);
   background-image: url(../images/emojis/corazon.svg);
@@ -1279,13 +1279,41 @@ body {
   height: 500px;
   position: absolute;
   right: 0px;
-  top: 600px;
+  top: 900px;
   opacity: 0.1;
   transform: rotate(20deg);
   background-image: url(../images/emojis/fuego.svg);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: -10;
+}
+
+.comentarios__banner {
+  width: 80%;
+  max-width: 500px;
+  aspect-ratio: 2.5;
+  height: auto;
+  background: linear-gradient(to right, #978bda, transparent);
+  padding: 25px 80px 25px 25px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 60px 20px 60px 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.comentarios__banner h2 {
+  flex-grow: 1;
+}
+
+.comentario__like {
+  position: absolute;
+  bottom: auto;
+  right: -10%;
+  width: 40%;
+  aspect-ratio: 1;
 }
 
 .comentario__container {
