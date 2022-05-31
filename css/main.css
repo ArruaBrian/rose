@@ -384,7 +384,7 @@ template {
 
 @font-face {
   font-family: oswald;
-  src: url(../../fonts/Oswald.ttf) format("truetype");
+  src: url(../fonts/Oswald.ttf) format("truetype");
 }
 @font-face {
   font-family: lato;
