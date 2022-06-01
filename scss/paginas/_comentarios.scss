@@ -37,6 +37,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         z-index: -10;
+        mix-blend-mode: luminosity;
 
     }
 
@@ -54,6 +55,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         z-index: -10;
+        mix-blend-mode: luminosity;
 
     }
 
@@ -69,17 +71,19 @@
     max-width: 500px;
     aspect-ratio: 2.5;
     height: auto;
-    background: linear-gradient(to right, $violeta, transparent);
-    padding: 25px 80px 25px 25px;
+    background: linear-gradient(to right, white 0%, $violeta 125%);
+    padding: 25px 80px 25px 45px;
     box-sizing: border-box;
     position: relative;
     border-radius: 60px 20px 60px 20px;
+    filter: drop-shadow(2px 4px 6px black);
 
     @include flexbox (row, flex-start, center, 1);
 
     & h2{
 
         flex-grow: 1;
+        // text-shadow: 2px 2px 0px #ff9966, 1px 1px 0px #ff9966, 3px 3px 0px #ff9966;
 
     }
 
@@ -95,8 +99,13 @@
     right: -10%;
     width: 40%;
     aspect-ratio: 1;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.548));
+
+
+    animation: like 10s infinite;
 
 }
+
 
 // container del comentario
 
@@ -121,13 +130,32 @@
     width: auto;
     height: auto;
     background-color: white;
-    padding: 20px;
+    padding: 25px;
     box-sizing: border-box;
     border-radius: 40px 40px 0px 40px;
     margin-bottom: 50px;
-    box-shadow: 2px 4px 2px 2px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 
     @include flexbox(column, center, flex-end, 1);
+
+    &::after{
+
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        z-index: 1;
+
+    }
+
+}
+
+// Z text
+
+.z__text{
+
+    z-index: 2;
 
 }
 
@@ -136,8 +164,8 @@
 .globo__nombre{
 
     position: absolute;
-    bottom: 15px;
-    right: 30px;
+    top: 15px;
+    right: 25px;
 
 }
 
@@ -201,11 +229,12 @@
 
 .violeta__d{
 
-    background: linear-gradient(to right,$violeta__o, rgb(54, 206, 160));
+    background: linear-gradient(to right,$violeta__o, #ff9966);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 
 }
+
 
 // Tolerancia texto - nombre
 

@@ -74,6 +74,7 @@
     position: relative;
     @include flexbox(row, center, center, 1);
     overflow: hidden;
+    filter: drop-shadow(8px 4px 15px black);
 
 
     @include media-up(md){
@@ -141,11 +142,15 @@
 
     width: 60%;
     height: auto;
+    padding: 50px 0px 40px 0px;
     aspect-ratio: 16/14;
     background-image: url(../images/blobs/blob_1.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    position: relative;
+    filter: drop-shadow(4px 6px 10px black);
+
 
     @include flexbox(column, center, center, 1);
 
@@ -161,8 +166,10 @@
 
 .index__phone{
 
-    width: 100%;
+    position: absolute;
+    width: 60%;
     height: auto;
+    filter: drop-shadow(10px 4px 20px black);
 
     animation: flotando 4s infinite;
 
@@ -198,6 +205,7 @@
     height: 100%;
     position: relative;
 
+    
     @include media-up(md) {
 
         @include flexbox(row, center, center, 1);
@@ -214,7 +222,8 @@
 .social__bar {
 
     position: relative;
-    background-color: #978bda3b;
+    background-color: #978bda2c;
+    backdrop-filter: blur(5px);
     left: -60px;
     width: 200px;
     height: 40px;
@@ -229,6 +238,34 @@
     }
 
     @include flexbox(row, center, center, 1);
+
+    // Linea blanca del bar
+
+    &::after{
+
+        content: '';
+        position: absolute;
+        width: 5%;
+        height: 5px;
+        background-color: white;
+        border-radius: 20px;
+        top: auto;
+        left: -20px;
+
+    }
+
+    &::before{
+
+        content: '';
+        position: absolute;
+        width: 5%;
+        height: 5px;
+        background-color: white;
+        border-radius: 20px;
+        top: auto;
+        right: -20px;
+
+    }
 
 }
 
@@ -252,6 +289,7 @@
     height: auto;
 
     @include grid(1, 2, 2, 20px, 10px);
+    gap: 40px;
 
     @include media-up (md) {
 
@@ -265,13 +303,17 @@
 
 .skills__section {
 
-    @include box(80%, auto, white, 20px, 1.6);
+    width: 80%;
+    height: auto;
+    border-radius: 15px 60px 15px 60px;
+    background: linear-gradient(to right, white 0%, $violeta 200%);
+    aspect-ratio: 1.6;
     max-width: 330px;
+    padding: 15px 30px 15px 30px;
+    box-sizing: border-box;
+    filter: drop-shadow(2px 4px 6px black);
 
-    border: $gris solid 1px;
-    background-color: $negro;
-
-    @include flexbox(column, flex-start, flex-start, 1);
+    @include flexbox(column, flex-start, center, 1);
 
 }
 
@@ -284,7 +326,8 @@
 
 .section__content {
 
-    @include flexbox(row, space-evenly, center, 1);
+    @include flexbox(row, center, center, 1);
+    gap: 30px;
     width: 100%;
     height: 7rem;
 }

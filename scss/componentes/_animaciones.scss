@@ -1,3 +1,7 @@
+// ========================================Dependencias===========================================
+
+@use '../base/colors' as *;
+
 // ========================================Animaciones===========================================
 
 // Borde arcoiris para cualquier complemento
@@ -110,7 +114,16 @@
 // Tick
 
 @keyframes tick {
-    0%{color: #7d5597;}
+    0%{color: $violeta;}
     50%{color: transparent;}
 
+}
+
+// Like
+
+@keyframes like {
+
+    30%{transform: rotate(0deg) translateY(10%);}
+    33%{transform: rotate(-15deg) scale(1.3)translateY(-10%);}
+    
 }

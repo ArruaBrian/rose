@@ -85,7 +85,7 @@
 .desc__pagina{
 
     @include box(70%, auto, white, 20px, 2);
-    // background-image: linear-gradient(to right, white, $violeta);
+    background: linear-gradient(to right, white 0%, $violeta 200%);
     position: absolute;
     padding: 15px 30px 15px 30px;
     box-sizing: border-box;
