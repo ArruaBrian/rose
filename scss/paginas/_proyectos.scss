@@ -50,6 +50,8 @@
     background-image: url(../images/proyectos/Coder.webp);
     background-position: left;
     background-size: cover;
+    box-shadow: -6px 4px 0px 1px $violeta;
+    transform: skewX(5deg);
 
     &__2{
 
@@ -82,11 +84,14 @@
 
 .desc__pagina{
 
-    @include box(70%, auto, $negro, 20px, 2);
+    @include box(70%, auto, white, 20px, 2);
+    // background-image: linear-gradient(to right, white, $violeta);
     position: absolute;
+    padding: 15px 30px 15px 30px;
+    box-sizing: border-box;
     z-index: 2;
     right: 0px;
-    border: $gris solid 1px;
+    box-shadow: 6px 4px 0px 1px $violeta;
 
     
 }

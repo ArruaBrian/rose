@@ -22,30 +22,124 @@
 
 }
 
-// Rick
+// Intro
 
-.index__rick {
+.index__intro{
 
-    width: 28%*3;
+    width: 100%;
     height: auto;
-    aspect-ratio: 16/8;
+    overflow: hidden;
     position: relative;
-    z-index: 2;
-    border-radius: 5px;
+    @include flexbox(row, center, center, 1);
+    @include media-up(md){
 
-    @include media-up(md) {
+        flex-direction: column;
 
-        width: 100%;
+    }
+    gap: 20px;
+
+    // Linea de fondo
+
+    &::after{
+
+        content: '';
+        position: absolute;
+        top: auto;
+        width: 90%;
+        height: 50px;
+        background-color: $violeta;
+        border-radius: 30px 10px 30px 10px;
+        z-index: -10;
+
+        @include media-up(md){
+
+            width: 50px;
+            height: 80%;
+
+        }
+    }
+
+}
+
+// Me
+
+.index__me{
+
+    width: 40%;
+    aspect-ratio: 1.6;
+    padding: 0px 30px 0px 30px;
+    box-sizing: border-box;
+    border-radius: 15px 60px 16px 60px;
+    background: linear-gradient(to right, white 0%, $violeta 140%);
+    position: relative;
+    @include flexbox(row, center, center, 1);
+    overflow: hidden;
+
+
+    @include media-up(md){
+
+        width: 60%;
+        order: 2;
+
+    }
+
+    @include media-up(sm){
+
+        width: 80%;
 
     }
 
 }
 
+// Me position para el emoji
+
+.me__position{
+
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    top: 0;
+
+    &::after{
+
+        content: '';
+        position: absolute;
+        width: 40%;
+        aspect-ratio: 1;
+        top: -200%;
+        right: -10%;
+        transform: rotate(-160deg);
+        background-image: url(../images/emojis/paz.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+
+    }
+
+}
+
+
+// Me text (capa de posicionamiento)
+
+.me__text{
+
+    z-index: 2;
+}
+
+// Animacion del 'escritor'
+
+.tick__animation{
+
+    animation: tick 1s infinite;
+
+}
+
 // blob
 
-.index__blob {
+.intro__blob {
 
-    width: 16%*5;
+    width: 60%;
     height: auto;
     aspect-ratio: 16/14;
     background-image: url(../images/blobs/blob_1.svg);
@@ -57,9 +151,22 @@
 
     @include media-up(md) {
 
-        width: 100%;
+        width: 80%;
+        order: 1;
 
     }
+}
+
+// Mockup
+
+.index__phone{
+
+    width: 100%;
+    height: auto;
+
+    animation: flotando 4s infinite;
+
+
 }
 
 // Navegador de redes

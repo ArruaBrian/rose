@@ -90,7 +90,7 @@
 
 .section{
 
-    @include box(100%, auto, $negro, 20px, none);
+    @include box(100%, auto, rgb(22, 14, 32), 20px, none);
     @include grid(0, 0, 0, 0px, 0px, center, center){
 
 

@@ -97,3 +97,20 @@
         background-color: rgb(189, 65, 48);
     }
 }
+
+// FLotando
+
+@keyframes flotando {
+    0%{transform: translateY(-5%); transition: ease-out;}
+    50%{transform: translateY(5%); transition: ease-out;}
+    100%{transform: translateY(-5%); transition: ease-out;}
+
+}
+
+// Tick
+
+@keyframes tick {
+    0%{color: #7d5597;}
+    50%{color: transparent;}
+
+}
