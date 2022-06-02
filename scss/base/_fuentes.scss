@@ -37,6 +37,13 @@
 
     }
 
+    &__ms {
+
+        @include font-size(1.75rem);
+        @extend.text;
+
+    }
+
     &__s {
 
         @include font-size(2.5rem);
