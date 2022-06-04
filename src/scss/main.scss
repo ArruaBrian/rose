@@ -1,0 +1,68 @@
+// ========================================Paginas===========================================
+
+// Layout
+
+@forward './paginas/layout';
+
+// Index
+
+@use './paginas/index';
+
+// Comentarios
+
+@use './paginas/comentarios';
+
+// Contacto
+
+@use './paginas/contacto';
+
+// Precios
+
+@use './paginas/precios';
+
+// Proyectos
+
+@use './paginas/proyectos';
+
+// Las paginas estan construidas a partir del root/scss/base/_base.scss
+// Por ende las paginas estan linkeadas dentro del main puesto que el 'core' de las mismas
+// esta por separado para mayor control, mantenimiento y orden de el codigo
+
+
+// ++++++++++++++++++++++++++++ Bootstrap ++++++++++++++++++++++++++++++++++++++
+
+// Funciones
+
+@import '../../node_modules/bootstrap/scss/functions';
+
+// Variables
+
+@import '../../node_modules/bootstrap/scss/variables';
+
+// Dependencias importantes 
+
+@import '../../node_modules/bootstrap/scss/maps';
+@import '../../node_modules/bootstrap/scss/mixins';
+@import '../../node_modules/bootstrap/scss/root';
+
+// Bootstrap (modificaciones)
+
+@import './componentes/boostrap--edit';
+
+
+// Tooltip (estilos del elementos JS)
+
+@import'../../node_modules/bootstrap/scss/tooltip';
+@import'../../node_modules/bootstrap/scss/popover';
+
+// Modal
+
+@import'../../node_modules/bootstrap/scss/modal';
+
+
+// Transiciones 
+
+@import'../../node_modules/bootstrap/scss/transitions';
+
+
+

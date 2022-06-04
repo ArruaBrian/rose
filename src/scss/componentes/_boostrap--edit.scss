@@ -1,0 +1,25 @@
+// Dependencias ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Colores
+
+@use '../base/colors';
+
+// Fuentes
+
+@use '../base/fuentes' as *;
+
+// Boostrap MODAL =====================================================================
+
+$modal-content-bg: linear-gradient(to right, white 0%, colors.$violeta 140%);
+$modal-footer-border-color: transparent;
+$modal-header-border-color: transparent;
+$modal-header-padding: 15px 30px 15px 30px;
+$modal-inner-padding: 15px 30px 15px 30px;
+$modal-content-border-radius: 15px 60px 15px 60px;
+
+// Boostrap TOOLTIP =====================================================================
+
+$tooltip-bg: linear-gradient(to right, white 0%, colors.$violeta 140%);
+$tooltip-color: colors.$azul__a;
+$tooltip-arrow-color: colors.$violeta;
+$tooltip-arrow-height: 1.2rem;
