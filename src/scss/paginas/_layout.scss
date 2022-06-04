@@ -1,0 +1,136 @@
+// ========================================Base===========================================
+
+@use '../base/base' as *;
+@use '../utilidades/rfs' as *;
+
+
+// ========================================Body===========================================
+
+body {
+
+    background: linear-gradient(180deg, rgba(14, 22, 32, 1) 0%, rgba(22, 14, 32, 1) 100%);
+
+    // Flexbox
+
+    @include flexbox(column, center, center, 1);
+
+    // Patron
+
+    position: relative;
+    
+    &::after{
+
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='40' height='40' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(135)'%3E%3Crect width='100%25' height='100%25' fill='rgba(255, 255, 255,0)'/%3E%3Ccircle cx='0' cy='20' r='1' fill='rgba(39, 0, 138,1)'/%3E%3Ccircle cx='40' cy='20' r='1' fill='rgba(39, 0, 138,1)'/%3E%3Cpath d='m 19.5 19.5 h1 v1 h-1z' fill='rgba(68, 51, 122,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+        opacity: 0.8;
+        z-index: -11;
+    }
+}
+
+
+
+// ========================================Header===========================================
+
+// Base
+
+.global__header {
+
+    @include flexbox(row, space-between, center, 1);
+
+    height: 120px;
+    width: 80%;
+    max-width: 1280px;
+
+    @include media-up(md) {
+
+        width: 100%;
+
+    }
+
+}
+
+// Logo
+
+.header__logo {
+
+    order: 1;
+
+    height: 80px;
+    width: auto;
+    aspect-ratio: 1/1;
+    background-image: url('../logo.svg');
+    background-size: contain;
+
+}
+
+// navbar
+
+.header__navbar {
+
+    @include flexbox(row, space-between, center, 1);
+    order: 2;
+
+    width: 250px;
+    list-style: none;
+    padding: 20px;
+    box-sizing: border-box
+}
+
+
+// ========================================footer===========================================
+
+// Base
+
+.global__footer {
+
+    @include flexbox(row, space-between, center, 1);
+    height: auto;
+    min-height: 180px;
+    width: 80%;
+    max-width: 1280px;
+    border-radius: 10px;
+    border-top: $violeta solid 1px;
+    padding: 20px;
+    position: relative;
+
+    box-sizing: border-box;
+
+    @include media-up(md) {
+
+        width: 100%;
+        @include flexbox(column, center, center, 1);
+        gap: 20px;
+
+    }
+
+}
+
+.footer__logo__img {
+
+    height: 80px;
+    width: 80px;
+    aspect-ratio: 1/1;
+    background-image: url('../logo.svg');
+    background-size: contain;
+
+}
+
+// Footer boton
+
+.footer__boton {
+
+    justify-content: flex-start;
+    @extend.text__xs;
+
+    @include media-up(sm) {
+
+        // Usamos el include porque no podemos extender en un media
+
+        @include font-size(16px);
+
+    }
+
+}

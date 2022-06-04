@@ -1,0 +1,111 @@
+// ========================================Base===========================================
+
+@use '../base/base' as *;
+
+// Extension del index
+
+@use './index' as *;
+
+// ========================================Proyectos===========================================
+
+
+// Base
+
+.proyectos__main{
+
+    @extend.index__main;
+
+}
+
+// Grid
+
+.proyectos__grid{
+
+    height: auto;
+    width: 80%;
+
+    @include grid(1, 2, 2, 60px, 90px, center, center);
+
+}
+
+
+
+// Proyectos
+
+.proyectos__section{
+
+    @include box(100%, inherit, transparent, 20px, 1);
+    @include flexbox(row, flex-start, center, 1);
+    position: relative;
+
+}
+
+// Paginas
+
+.pagina{
+
+    @include box(60%, auto, white, 20px, 0.5555555556);
+    z-index: 1;
+    border: $gris solid 2px;
+    background-image: url(../images/proyectos/Coder.webp);
+    background-position: left;
+    background-size: cover;
+    box-shadow: -6px 4px 0px 1px $violeta;
+    transform: skewX(5deg);
+
+    &__2{
+
+        @extend.pagina;
+        background-image: none;
+        background-image: url(../images/proyectos/gatitos.webp)
+
+    }
+
+    &__3{
+
+        @extend.pagina;
+        background-image: none;
+        background-image: url(../images/proyectos/lenguajetool.webp)
+
+    }
+
+    &__4{
+
+        @extend.pagina;
+        background-image: none;
+        background-image: url(../images/proyectos/twitter.webp)
+
+    }
+
+}
+
+
+// Descricpciones
+
+.desc__pagina{
+
+    @include box(70%, auto, white, 20px, 2);
+    background: linear-gradient(to right, white 0%, $violeta 200%);
+    position: absolute;
+    padding: 15px 30px 15px 30px;
+    box-sizing: border-box;
+    z-index: 2;
+    right: 0px;
+    box-shadow: 6px 4px 0px 1px $violeta;
+
+    
+}
+
+// grid de las descripciones
+
+.pagina__grid{
+
+
+    @include grid(0, 1, 2, 20px, 0px, flex-start, center){
+
+        grid-template-columns: 100%;
+        grid-template-rows: 3rem 1fr 3rem;
+
+    }
+
+}

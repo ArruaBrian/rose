@@ -1,0 +1,24 @@
+{
+  "name": "rose",
+  "version": "1.0.0",
+  "description": "rose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArruaBrian/rose.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArruaBrian/rose/issues"
+  },
+  "homepage": "https://github.com/ArruaBrian/rose#readme",
+  "dependencies": {
+    "boostrap": "^2.0.0",
+    "bootstrap": "^5.2.0-beta1"
+  }
+}

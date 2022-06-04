@@ -1,0 +1,47 @@
+// ======================= Dependencias ===============================================
+
+@use 'sass:color';
+
+
+// ======================= Colores ===============================================
+
+$violeta: #978bda;
+$violeta__o: #7d5597;
+$gris: #C5C6C7;
+$negro: #040408;
+$azul__o: #0e1620;
+$azul__a: #0e1620b9;
+$amarillo: #FADB5F;
+$white: white;
+$pink: pink;
+$tomato: tomato;
+$lightgreen: lightgreen;
+
+// Clases
+
+$color:(violeta: $violeta,
+    violeta__o: $violeta__o,
+    gris: $gris,
+    negro: $negro,
+    azul__o: $azul__o,
+    azul__a: $azul__a,
+    amarillo: $amarillo,
+    "white": $white,
+    "pink": $pink,
+    "tomato": $tomato,
+    "lightgreen": $lightgreen,
+    dark__gris: darken($gris, 30%));
+
+// Clases
+
+@each $colors,
+$color in $color {
+
+    .#{$colors} {
+
+        color: $color;
+
+    }
+
+}
+

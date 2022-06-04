@@ -1,0 +1,499 @@
+// ========================================Base===========================================
+
+@use '../base/base' as *;
+@use '../utilidades/rfs' as *;
+
+// ========================================Main===========================================
+
+// Base
+
+.index__main {
+
+    @include flexbox(column, flex-start, center, 1);
+    height: auto;
+    width: 80%;
+    max-width: 1280px;
+
+    @include media-up(md) {
+
+        width: 100%;
+
+    }
+
+}
+
+// Container de la introducción
+
+.index__intro{
+
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    @include flexbox(row, center, center, 1);
+    @include media-up(md){
+
+        flex-direction: column;
+
+    }
+    gap: 20px;
+
+    // Linea de fondo
+
+    &::after{
+
+        content: '';
+        position: absolute;
+        top: auto;
+        width: 90%;
+        height: 50px;
+        background-color: $violeta;
+        border-radius: 30px 10px 30px 10px;
+        z-index: -10;
+
+        @include media-up(md){
+
+            width: 50px;
+            height: 80%;
+
+        }
+    }
+
+}
+
+// Seccion donde me presento
+
+.index__me{
+
+    width: 40%;
+    aspect-ratio: 1.6;
+    padding: 0px 30px 0px 30px;
+    box-sizing: border-box;
+    border-radius: 15px 60px 16px 60px;
+    background: linear-gradient(to right, white 0%, $violeta 140%);
+    position: relative;
+    @include flexbox(row, center, center, 1);
+    overflow: hidden;
+    filter: drop-shadow(8px 4px 15px black);
+
+
+    @include media-up(md){
+
+        width: 60%;
+        order: 2;
+
+    }
+
+    @include media-up(sm){
+
+        width: 80%;
+
+    }
+
+}
+
+// Me position para el emoji
+
+.me__position{
+
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    top: 0;
+
+    &::after{
+
+        content: '';
+        position: absolute;
+        width: 40%;
+        aspect-ratio: 1;
+        top: -200%;
+        right: -10%;
+        transform: rotate(-160deg);
+        background-image: url(../images/emojis/paz.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+
+    }
+
+}
+
+
+// Me text (capa de posicionamiento)
+
+.me__text{
+
+    z-index: 2;
+}
+
+// Animacion del 'escritor'
+
+.tick__animation{
+
+    animation: tick 1s infinite;
+
+}
+
+// blob
+
+.intro__blob {
+
+    width: 60%;
+    height: auto;
+    padding: 50px 0px 40px 0px;
+    aspect-ratio: 16/14;
+    background-image: url(../images/blobs/blob_1.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+    filter: drop-shadow(4px 6px 10px black);
+
+
+    @include flexbox(column, center, center, 1);
+
+    @include media-up(md) {
+
+        width: 80%;
+        order: 1;
+
+    }
+}
+
+// Mockup
+
+.index__phone{
+
+    position: absolute;
+    width: 60%;
+    height: auto;
+    filter: drop-shadow(10px 4px 20px black);
+
+    animation: flotando 4s infinite;
+
+
+}
+
+// Navegador de redes
+
+.global__social {
+
+    height: 50px;
+    width: 100%;
+    position: sticky;
+    z-index: 10;
+    top: 20%;
+
+    @include media-up(md) {
+
+        @include flexbox(row, center, center, 1);
+        margin: 40px;
+        position: inherit;
+        top: inherit;
+
+    }
+
+
+}
+
+// posicionador de barra
+
+.social__bar__position{
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    
+    @include media-up(md) {
+
+        @include flexbox(row, center, center, 1);
+        position: inherit;
+        top: inherit;
+
+    }
+    
+
+}
+
+// Barra
+
+.social__bar {
+
+    position: relative;
+    background-color: #978bda2c;
+    backdrop-filter: blur(5px);
+    left: -60px;
+    width: 200px;
+    height: 40px;
+    transform: rotate(-90deg);
+    border-radius: 10px;
+
+    @include media-up(md) {
+
+        position: inherit;
+        transform: rotate(0deg);
+
+    }
+
+    @include flexbox(row, center, center, 1);
+
+    // Linea blanca del bar
+
+    &::after{
+
+        content: '';
+        position: absolute;
+        width: 5%;
+        height: 5px;
+        background-color: white;
+        border-radius: 20px;
+        top: auto;
+        left: -20px;
+
+    }
+
+    &::before{
+
+        content: '';
+        position: absolute;
+        width: 5%;
+        height: 5px;
+        background-color: white;
+        border-radius: 20px;
+        top: auto;
+        right: -20px;
+
+    }
+
+}
+
+// Lista
+
+.bar__lista {
+
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    @include flexbox(row, space-evenly, center, 1);
+
+}
+
+// Skills
+
+
+.index__skills {
+
+    width: 80%;
+    height: auto;
+
+    @include grid(1, 2, 2, 20px, 10px);
+    gap: 40px;
+
+    @include media-up (md) {
+
+        width: 100%;
+
+    }
+
+}
+
+// Cajas con mis habilidades
+
+.skills__section {
+
+    width: 80%;
+    height: auto;
+    border-radius: 15px 60px 15px 60px;
+    background: linear-gradient(to right, white 0%, $violeta 200%);
+    aspect-ratio: 1.6;
+    max-width: 330px;
+    padding: 15px 30px 15px 30px;
+    box-sizing: border-box;
+    filter: drop-shadow(2px 4px 6px black);
+
+    @include flexbox(column, flex-start, center, 1);
+
+}
+
+.section__title {
+
+    @include flexbox(row, center, center, 1);
+    width: 100%;
+
+}
+
+.section__content {
+
+    @include flexbox(row, center, center, 1);
+    gap: 30px;
+    width: 100%;
+    height: 7rem;
+}
+
+// Section pages (donde se encuentran todos los links a las otras paginas tipo call2action)
+
+.index__pages{
+
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    @include flexbox(column, center, center, 1);
+    gap: 60px;
+
+    @include media-up(md){
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+}
+
+// Estilo de las secciones{
+
+.pages__section{
+
+    position: relative;
+    width: 50%;
+    height: auto;
+    min-height: 250px;
+    background: linear-gradient(to right, white 0%, rgb(151, 139, 218) 140%);
+    border-radius: 60px 15px 60px 15px;
+    padding: 15px 30px 15px 30px;
+    box-sizing: border-box;
+
+    @include flexbox (row, space-evenly, center, 1);
+
+
+    @include media-up(md){
+
+        flex-direction: column;
+        width: 90%;
+
+    }
+
+
+}
+
+// ======= Container
+
+.pages__container{  // Contenedor del escenario animado
+
+    width: 100%;
+    height: 160px;
+    @include flexbox (row, center, center, 1);
+
+    @include media-up(md){
+
+        order: -10;
+
+    }
+
+}
+
+
+// =============== Seccion de comentarios
+
+
+.container__corazon{
+
+    width: 160px;
+    position: relative;
+    height: auto;
+    order: -120;
+    filter: drop-shadow(4px 6px 4px rgba(0, 0, 0, 0.2));
+    animation: flotando 3s infinite;
+
+    @include media-up(sm){
+
+        width: 140px;
+
+    }
+
+}
+
+// =============== Seccion de Proyectos
+
+.container__telefono{
+
+    width: 100px;
+    height: auto;
+    animation: flotando 5s infinite;
+    filter: drop-shadow(4px 6px 4px rgba(0, 0, 0, 0.2));
+
+    @include media-up(md){
+
+        width: 80px;
+
+    }
+
+
+}
+
+
+// =============== Seccion de Sale
+
+.container__sale{
+
+    width: 140px;
+    height: auto;
+    animation: flotando 5s infinite;
+    filter: drop-shadow(4px 6px 4px rgba(0, 0, 0, 0.2));
+
+    @include media-up(sm){
+
+        width: 120px;
+        left: 30%;
+
+    }
+
+}
+
+// =============== Seccion de COntacto
+
+.container__contacto{
+
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(4px 6px 4px rgba(0, 0, 0, 0.2));
+
+    animation: flotando 5s infinite;
+
+    @include media-up(sm){
+
+        width: 180px;
+        left: 20%;
+
+    }
+
+}
+
+// Modal body
+
+.modal-body{
+
+    @include flexbox(column, center, center, 1);
+
+}
+
+// Modal certificado
+
+.modal__certificado{
+
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+
+}
+
+
+
+
+

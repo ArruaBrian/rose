@@ -1,0 +1,48 @@
+// ========================================Dependencias===========================================
+
+// Media para el responsive automatico
+@use './media' as *;
+
+// La operacion logica "/" fue eliminada en sass 2.0.0 por ende usamos Math
+@use "sass:math";
+
+
+// ========================================Grid===========================================
+
+@mixin grid ($normal, $columns, $rows, $colg, $rowg, $ji : center, $ai : center) {
+
+    display: grid;
+    height: auto;
+    min-height: 100%;
+
+
+    @if $normal==1 {
+
+        grid-template-columns: repeat($columns, 1fr);
+        grid-template-rows: repeat($rows, 1fr);
+
+        // Responsive automatico solo si el grid es automatico
+
+        @include media-up (md) {
+
+            grid-template-columns: math.div($columns, $columns)+fr;
+            grid-template-rows: ($columns * $rows)+fr;
+
+        }
+
+    }
+
+    @else {
+
+        // Contenido especial
+
+        @content;
+
+    }
+
+    column-gap: $colg;
+    row-gap: $rowg;
+    justify-items: $ji;
+    align-items: $ai;
+
+}
